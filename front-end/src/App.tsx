@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { inject, observer } from 'mobx-react';
+import styled, { ThemeProvider } from 'styled-components';
+import Theme from './Theme/Theme';
+import { ITestStore } from './Commons/Stores/TestStore';
+import logo from './logo.svg';
+import Header from './Componets/Header';
+import ContentGradient from './Componets/ContentGradient';
+import Portfolio from "./Containers/Portfolio/Portfolio";
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface AppProps {
+  testStore? : ITestStore
 }
+const App: React.FC<AppProps> = ({ testStore } : AppProps) => (
+  <ThemeProvider theme={Theme}>
+    <div className="App">
+      <Header />
+      <ContentGradient>
+        <div>
+          <Portfolio />
+        </div>
+      </ContentGradient>
+    </div>
+  </ThemeProvider>
+);
 
-export default App;
+export default inject('testStore')(observer(App));

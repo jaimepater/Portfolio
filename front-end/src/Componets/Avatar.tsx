@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import imageJaime from '../assets/Jaime.png';
+import imageJaime from '../assets/Images/Jaime.png';
 
 
 const Avatar = styled.div`

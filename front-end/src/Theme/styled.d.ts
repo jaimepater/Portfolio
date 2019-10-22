@@ -7,5 +7,12 @@ declare module 'styled-components' {
       blue1: string,
       white: string,
     }
+    fontSize: {
+      xl: string,
+      lg: string,
+      md: string,
+      sm: string,
+      xs: string,
+    }
   }
 }

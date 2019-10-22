@@ -2,15 +2,16 @@ import React from 'react';
 import './App.css';
 import { inject, observer } from 'mobx-react';
 import styled, { ThemeProvider } from 'styled-components';
-import Theme from './Theme/Theme';
+import { GlobalStyle, Theme } from './Theme/Theme';
 import { ITestStore } from './Commons/Stores/TestStore';
-import logo from './logo.svg';
 import Header from './Componets/Header';
 import ContentGradient from './Componets/ContentGradient';
-import Portfolio from "./Containers/Portfolio/Portfolio";
+import Portfolio from './Containers/Portfolio/Portfolio';
+import { IProfileStore } from './Commons/Stores/ProfileStore';
 
 interface AppProps {
   testStore? : ITestStore
+  profileStore? : IProfileStore
 }
 const App: React.FC<AppProps> = ({ testStore } : AppProps) => (
   <ThemeProvider theme={Theme}>
@@ -21,6 +22,7 @@ const App: React.FC<AppProps> = ({ testStore } : AppProps) => (
           <Portfolio />
         </div>
       </ContentGradient>
+      <GlobalStyle />
     </div>
   </ThemeProvider>
 );

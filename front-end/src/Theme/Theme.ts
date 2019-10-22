@@ -1,8 +1,14 @@
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, createGlobalStyle } from 'styled-components';
+
 import Palette from './Palette';
+import { FontFaces, FontSize } from './Fonts';
 
 export const Theme: DefaultTheme = {
   palette: Palette,
+  fontSize: FontSize,
 };
 
-export default Theme;
+
+export const GlobalStyle = createGlobalStyle`
+${FontFaces}
+`;

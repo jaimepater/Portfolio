@@ -1,13 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Avatar from '../../../Componets/Avatar';
+import Avatar from '../../../Components/Avatar';
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-const AvatarBorder = styled.div`
+export const AvatarBorder = styled.div`
   width: 180px;
   height: 180px;
   display: flex;

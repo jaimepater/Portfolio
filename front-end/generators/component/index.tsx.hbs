@@ -1,0 +1,31 @@
+/**
+ *
+ * {{ properCase name }}
+ *
+ */
+import * as React from 'react';
+{{#if styled}}
+import styled from 'styled-components';
+{{/if}}
+{{#if mobx}}
+    import { observer } from 'mobx-react';
+    import useStores from "../Commons/Hooks/Stores";
+{{/if}}
+
+{{#if styled}}
+    const {{ properCase name }} = styled.div`
+    `;
+{{else}}
+    interface {{ properCase name }}Props {
+
+    }
+    const {{ properCase name }} =  {{#if mobx}} observer( {{/if}}() => {
+    {{#if mobx}} const { profileStore } =  useStores(); {{/if}}
+    return ( <div>{{ properCase name }}</div>);
+   }
+    {{#if mobx}}
+        )
+    {{/if}}
+
+{{/if}}
+export default {{ properCase name }};

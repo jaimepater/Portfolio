@@ -1,7 +1,9 @@
-import TestStore from './TestStore';
+import React from 'react';
 import ProfileStore from './ProfileStore';
 
-export const stores = {
-  testStore: new TestStore(),
+const storesContext = React.createContext({
   profileStore: new ProfileStore(),
-};
+});
+
+
+export default  storesContext;

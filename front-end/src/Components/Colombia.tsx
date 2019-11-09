@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import imageColombia from '../assets/Images/Colombia.png';
+import imageColombia from '../assets/Images/Colombia.svg';
 
 
 const Colombia = styled.div`

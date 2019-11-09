@@ -5,7 +5,7 @@ import AvatarContainer from './AvatarContainer';
 import ProfileCard from './ProfileCard';
 
 const ProfileContainer = styled.div`
-  padding-top: 5%;
+          padding-top: 5%;
 `;
 
 const Profile = () => (

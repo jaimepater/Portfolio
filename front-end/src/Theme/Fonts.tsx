@@ -1,5 +1,4 @@
 import { css } from 'styled-components';
-import roboto from '../assets/Fonts/roboto-v20-latin/roboto-v20-latin-regular.woff2';
 import Italianno from '../assets/Fonts/rageitalic/rageitalic.woff2';
 
 export const FontFaces = css`
@@ -13,8 +12,8 @@ export const FontFaces = css`
 `;
 
 export const FontSize = {
-  xl: '20px',
-  lg: '18px',
+  xl: '50px',
+  lg: '30px',
   md: '16px',
   sm: '14px',
   xs: '12px',

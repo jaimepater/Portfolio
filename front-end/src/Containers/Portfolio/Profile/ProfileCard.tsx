@@ -1,13 +1,14 @@
 // @flow
 import * as React from 'react';
 import {
-  Card, CardActionArea, CardContent, Typography,
+  Card, CardContent,
 } from '@material-ui/core';
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
-import { inject, observer } from 'mobx-react';
-import { IProfileStore } from '../../../Commons/Stores/ProfileStore';
+import { useEffect } from 'react';
+import { observer } from 'mobx-react';
 import ProfileName from './ProfileName';
+import ProfileList from "./ProfileList";
+import useStores from "../../../Commons/Hooks/Stores";
 
 
 const StyledCard = styled(Card)`
@@ -19,13 +20,12 @@ const StyledCardContent = styled(CardContent)`
 `;
 
 interface CardProps {
-  profileStore? : IProfileStore
+
 }
-const ProfileCard: React.FC<CardProps> = ({ profileStore } : CardProps) => {
+const ProfileCard = observer(() => {
+  const { profileStore } =  useStores();
   useEffect(() => {
-    console.log('hiiiiiii');
-    profileStore && profileStore.getProfileData();
-    console.log(profileStore && profileStore.profileData.name);
+    profileStore.getProfileData();
   }, [profileStore]);
 
 
@@ -33,11 +33,12 @@ const ProfileCard: React.FC<CardProps> = ({ profileStore } : CardProps) => {
     <StyledCard>
       <StyledCardContent>
         <div>
-          <ProfileName name={profileStore && profileStore.profileData.name} />
+          <ProfileName name={profileStore.fullName} />
+          <ProfileList profiles={profileStore.profiles || []} time={5000} />
         </div>
       </StyledCardContent>
     </StyledCard>
   );
-};
+});
 
-export default inject('profileStore')(observer(ProfileCard));
+export default ProfileCard;

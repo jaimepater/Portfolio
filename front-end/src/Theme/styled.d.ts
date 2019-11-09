@@ -6,6 +6,7 @@ declare module 'styled-components' {
     palette: {
       blue1: string,
       white: string,
+      gray1: string,
     }
     fontSize: {
       xl: string,

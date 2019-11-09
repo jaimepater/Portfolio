@@ -1,0 +1,11 @@
+{
+    "profile" : {
+      "firstName" : "Jaime",
+      "lastName" : "Paternina Roa",
+      "list" : [ "Electronic engineer", "UI engineer", "React Developer", "IoT enthusiast" ]
+  },
+  "experience" : {
+    "title" : "Work experience",
+    "list": []
+  }
+}

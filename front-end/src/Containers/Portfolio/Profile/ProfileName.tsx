@@ -1,41 +1,53 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import H1 from '../../../Componets/H1';
-import Colombia from '../../../Componets/Colombia';
+import styled, { keyframes } from 'styled-components';
+import { Grid } from '@material-ui/core';
+import H1 from '../../../Components/H1';
+import Colombia from '../../../Components/Colombia';
 
-const ProfileNameContainer = styled.div`
-display: flex;
-align-content: center;
-text-align: center;
-align-items: center;
-justify-content: center;
-`;
 
-const Name = styled.div`
 
+export const Name = styled.div`
+ font-family: 'Roboto';
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: ${props => props.theme.palette.gray1};
 `;
 
 const Flag = styled.div`
-    height: 20px;
-    width: 30px;
-    margin-left: 5px;
+    height: 30px;
+    width: 40px;
 `;
+
 
 interface IProfileNameProps {
   name: string
 }
 
 const ProfileName = ({ name } : IProfileNameProps) => (
-  <ProfileNameContainer>
-    <Name>
-      <H1>
-        {name}
-      </H1>
-    </Name>
-    <Flag>
-      <Colombia />
-    </Flag>
-  </ProfileNameContainer>
+  <Grid
+    container
+    direction="row"
+    justify="center"
+    alignItems="center"
+    spacing={1}
+  >
+    <Grid item>
+      <Flag>
+        <Colombia />
+      </Flag>
+    </Grid>
+    <Grid item>
+      <Name>
+        <H1>
+          {name}
+        </H1>
+      </Name>
+    </Grid>
+  </Grid>
 );
 
 export default ProfileName;

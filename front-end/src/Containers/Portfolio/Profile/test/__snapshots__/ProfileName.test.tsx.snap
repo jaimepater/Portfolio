@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileName Renders ProfileName 1`] = `
+<WithStyles(ForwardRef(Grid))
+  alignItems="center"
+  container={true}
+  direction="row"
+  justify="center"
+  spacing={1}
+>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+  >
+    <styled.div>
+      <styled.div />
+    </styled.div>
+  </WithStyles(ForwardRef(Grid))>
+  <WithStyles(ForwardRef(Grid))
+    item={true}
+  >
+    <styled.div>
+      <styled.h1>
+        Jaime Paternina
+      </styled.h1>
+    </styled.div>
+  </WithStyles(ForwardRef(Grid))>
+</WithStyles(ForwardRef(Grid))>
+`;

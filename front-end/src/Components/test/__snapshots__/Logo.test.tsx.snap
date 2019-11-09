@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo Renders Logo 1`] = `
+<svg
+  height="44"
+  viewBox="0 0 56 84"
+  width="30"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <text
+    fill="#fff"
+    fontFamily="Italianno"
+    fontSize="60"
+    transform="translate(0 51)"
+  >
+    <tspan
+      x="0"
+      y="0"
+    >
+      J
+    </tspan>
+  </text>
+  <text
+    fill="#fff"
+    fontFamily="Italianno"
+    fontSize="60"
+    transform="translate(25 8)"
+  >
+    <tspan
+      x="0"
+      y="51"
+    >
+      p
+    </tspan>
+  </text>
+</svg>
+`;

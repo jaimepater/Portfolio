@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileCard Renders ProfileCard 1`] = `
+<Styled(WithStyles(ForwardRef(Card)))>
+  <Styled(WithStyles(ForwardRef(CardContent)))>
+    <div>
+      <ProfileName
+        name=""
+      />
+      <ProfileList
+        profiles={Array []}
+        time={5000}
+      />
+    </div>
+  </Styled(WithStyles(ForwardRef(CardContent)))>
+</Styled(WithStyles(ForwardRef(Card)))>
+`;

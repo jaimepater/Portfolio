@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileItem Renders ProfileItem 1`] = `
+<Styled(styled.h2)
+  time="5s"
+>
+  React
+</Styled(styled.h2)>
+`;
+
+exports[`ProfileItem Renders TextProfile 1`] = `
+<h2
+  className="sc-AykKC sc-AykKD legPfI"
+/>
+`;

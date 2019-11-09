@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileName Renders ProfileName 1`] = `
+<ProfileItem
+  key="0"
+  profile=""
+  time={5000}
+/>
+`;

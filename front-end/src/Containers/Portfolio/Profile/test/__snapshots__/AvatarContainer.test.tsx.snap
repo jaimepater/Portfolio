@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvatarContainer Renders AvatarBorder 1`] = `
+<div
+  className="sc-AykKE fEQJCt"
+/>
+`;
+
+exports[`AvatarContainer Renders AvatarContainer 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div />
+  </styled.div>
+</styled.div>
+`;

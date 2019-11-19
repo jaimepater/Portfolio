@@ -10,7 +10,7 @@ const ContentGradient = styled.div`
   rgba(63,162,196,1) 85.35%,
   rgba(65,170,201,1) 89.54%, 
   rgba(70,189,213,1) 100%);
-  height: 200%;
+  height: 300%;
 `;
 
 export default ContentGradient;

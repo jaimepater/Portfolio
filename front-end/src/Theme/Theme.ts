@@ -1,7 +1,7 @@
 import { DefaultTheme, createGlobalStyle } from 'styled-components';
 
 import Palette from './Palette';
-import { FontFaces, FontSize } from './Fonts';
+import {FontFaces, FontSize, Mexcellent} from './Fonts';
 
 export const Theme: DefaultTheme = {
   palette: Palette,
@@ -11,4 +11,5 @@ export const Theme: DefaultTheme = {
 
 export const GlobalStyle = createGlobalStyle`
 ${FontFaces}
+${Mexcellent}
 `;

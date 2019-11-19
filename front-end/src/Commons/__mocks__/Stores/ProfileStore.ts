@@ -12,4 +12,6 @@ export default class ProfileStoreMock implements IProfileStore {
   getProfileData: jest.Mocked<any>;
 
   experienceTitle: jest.Mocked<any>;
+
+  experienceList: jest.Mocked<any>;
 }

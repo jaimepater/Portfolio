@@ -1,5 +1,9 @@
-import { action, computed, observable } from 'mobx';
-import { profileRef } from '../Firebase/Firebase';
+import {action, computed, observable} from 'mobx';
+import moment, {Moment} from "moment";
+import {profileRef} from '../Firebase/Firebase';
+
+const NOW = "Now";
+const FORMAT = "MMM YYYY";
 
 
 export interface IProfileStore {
@@ -8,6 +12,7 @@ export interface IProfileStore {
   fullName: any;
   experienceTitle: any;
   profiles: any
+  experienceList: any
 }
 
 export interface IPortfolioData {
@@ -16,14 +21,32 @@ export interface IPortfolioData {
     lastName: string,
     list: Array<string>
   },
-  experience? : {
+  experience?: {
     title: string
-    list: Array<string>
+    list: Array<IExperienceList>
   }
 }
 
+export interface IExperienceList {
+  title: string
+  id: string
+  from: {
+    display: string,
+    date: Moment
+  }
+  to: {
+    display: string,
+    date: Moment
+  }
+  description: string
+  technologies: Array<string>
+
+
+}
+
+
 export default class ProfileStore implements IProfileStore {
-    @observable profileData : IPortfolioData = {} ;
+    @observable profileData: IPortfolioData = {};
 
     @computed get fullName() {
       let name = '';
@@ -48,6 +71,25 @@ export default class ProfileStore implements IProfileStore {
       }
       return experience;
     }
+
+    @computed get experienceList() {
+      let experienceList;
+      if (this.profileData.experience) {
+        experienceList = this.profileData.experience.list.map((item) => ({
+          ...item,
+          from: this.getDate(item.from),
+          to: this.getDate(item.to)
+        }));
+      }
+      return experienceList;
+    }
+
+    getDate = (stringDate: any) => {
+      if (stringDate === NOW) {
+        return {date: moment(), display: NOW};
+      }
+      return {date: moment(stringDate), display: moment(stringDate).format(FORMAT)};
+    };
 
     @action
     public getProfileData() {

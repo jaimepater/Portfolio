@@ -61,9 +61,8 @@ const BannerParallax = ({title, height}: BannerParallaxProps) => {
     resizeCheck: true
   });
 
-  if(rootNode.current){
-    console.log(rootNode.current.getBoundingClientRect().top,window.innerHeight,window.pageYOffset);
-  }
+
+
  
 
   useEffect(() => {

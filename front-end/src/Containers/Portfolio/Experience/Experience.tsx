@@ -19,7 +19,7 @@ const Experience =   observer( () => {
   const list  =  experienceList as Array<IExperienceList>;
 
   return ( <div>
-    <BannerParellax title={title} height={391} /> 
+    <BannerParellax title={title} height={391} />
     <ExperienceList experienceList={list}/>
   </div>);
 }

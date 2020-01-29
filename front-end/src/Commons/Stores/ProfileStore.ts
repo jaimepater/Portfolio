@@ -24,12 +24,24 @@ export interface IPortfolioData {
   experience?: {
     title: string
     list: Array<IExperienceList>
+  },
+  skills?: {
+    title: string,
+    list: Array<ISkill>
   }
+}
+
+export  interface ISkill {
+  id: string,
+  name: string,
+  score: string
 }
 
 export interface IExperienceList {
   title: string
   id: string
+  color: string,
+  responsibilities: Array<string>,
   from: {
     display: string,
     date: Moment
@@ -72,17 +84,33 @@ export default class ProfileStore implements IProfileStore {
       return experience;
     }
 
-    @computed get experienceList() {
-      let experienceList;
-      if (this.profileData.experience) {
-        experienceList = this.profileData.experience.list.map((item) => ({
-          ...item,
-          from: this.getDate(item.from),
-          to: this.getDate(item.to)
-        }));
+  @computed get skillTitle() {
+      let experience;
+      if (this.profileData.skills) {
+        experience = this.profileData.skills.title;
       }
-      return experienceList;
+      return experience;
     }
+
+  @computed get skillsList() {
+    let experience;
+    if (this.profileData.skills) {
+      experience = this.profileData.skills.list;
+    }
+    return experience;
+  }
+
+    @computed get experienceList() {
+    let experienceList;
+    if (this.profileData.experience) {
+      experienceList = this.profileData.experience.list.map((item) => ({
+        ...item,
+        from: this.getDate(item.from),
+        to: this.getDate(item.to)
+      }));
+    }
+    return experienceList;
+  }
 
     getDate = (stringDate: any) => {
       if (stringDate === NOW) {

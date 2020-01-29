@@ -7,6 +7,9 @@ declare module 'styled-components' {
       blue1: string,
       white: string,
       gray1: string,
+      gray2: string,
+      gray3: string,
+      gray4: string,
     }
     fontSize: {
       xl: string,

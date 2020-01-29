@@ -6,6 +6,7 @@ import Header from './Components/Header';
 import ContentGradient from './Components/ContentGradient';
 import Portfolio from './Containers/Portfolio/Portfolio';
 import Experience from "./Containers/Portfolio/Experience/Experience";
+import Skills from "./Containers/Portfolio/Skills/Skills";
 
 
 
@@ -17,6 +18,7 @@ const App = () => (
         <div>
           <Portfolio />
           <Experience />
+          <Skills/>
         </div>
       </ContentGradient>
       <GlobalStyle />

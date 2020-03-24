@@ -11,6 +11,7 @@ import ExperienceItem from "./ExperienceItem";
 
 const StyledContainer = styled(Container)`
   margin-top: 30px;
+  min-height: 500px;
 `;
 
 interface ExperienceListProps {

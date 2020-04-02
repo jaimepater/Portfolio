@@ -59,7 +59,6 @@ const BannerParallax = ({ title, height }: BannerParallaxProps) => {
       (rootNode.current && rootNode.current.getBoundingClientRect().top) || 0;
     const nn = (rootNode.current && rootNode.current.scrollTop) || 0;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    console.log(window.innerHeight, posY);
     return set({ top: window.pageYOffset - posY });
   };
 

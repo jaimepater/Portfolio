@@ -51,6 +51,11 @@ interface IMainTechImages {
 
 const StyledCard = styled(Card)`
   text-align: left;
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledCardActions = styled(CardActions)`
 `;
 
 const StyledGrid = styled(Grid)`
@@ -79,13 +84,21 @@ const ProjectSummary = ({
   toggle,
   descriptionLength
 }: ProjectSummaryProps) => {
+  const openGitHub = () => {
+    window.open(project.github);
+  };
+
+  const handleToggle = () => {
+    toggle && toggle();
+  };
+
   return (
     <StyledCard>
       <CardHeader
         title={project.title}
         subheader={undefined}
         action={
-          <IconButton>
+          <IconButton onClick={openGitHub}>
             <GitHubIcon />
           </IconButton>
         }
@@ -107,11 +120,11 @@ const ProjectSummary = ({
           descriptionLength
         )}...`}</Description>
       </CardContent>
-      <CardActions>
-        <Button size="small" onClick={() => toggle && toggle()}>
+      <StyledCardActions>
+        <Button size="small" color="primary" onClick={handleToggle}>
           Learn More
         </Button>
-      </CardActions>
+      </StyledCardActions>
     </StyledCard>
   );
 };

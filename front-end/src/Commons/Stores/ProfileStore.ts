@@ -19,6 +19,10 @@ export interface IPortfolioData {
   profile?: {
     firstName: string;
     lastName: string;
+    github: string;
+    strava: string;
+    mail: string;
+    linkedin: string;
     list: Array<string>;
   };
   experience?: {
@@ -32,6 +36,10 @@ export interface IPortfolioData {
   projects?: {
     title: string;
     list: Array<IProject>;
+  };
+  hobbies?: {
+    title: string;
+    list: Array<Hobbie>;
   };
 }
 
@@ -67,6 +75,13 @@ export interface IProject {
   mainTechnologies: Array<string>;
 }
 
+export interface Hobbie {
+  title: string;
+  color: string;
+  logo: string;
+  description: string;
+}
+
 export default class ProfileStore implements IProfileStore {
   @observable profileData: IPortfolioData = {};
 
@@ -78,6 +93,14 @@ export default class ProfileStore implements IProfileStore {
       }`;
     }
     return name;
+  }
+
+  @computed get profile() {
+    let profile;
+    if (this.profileData.profile) {
+      profile = this.profileData.profile;
+    }
+    return profile;
   }
 
   @computed get profiles() {
@@ -128,6 +151,22 @@ export default class ProfileStore implements IProfileStore {
     return projects;
   }
 
+  @computed get hobbiesTitle() {
+    let projects;
+    if (this.profileData.hobbies) {
+      projects = this.profileData.hobbies.title;
+    }
+    return projects;
+  }
+
+  @computed get hobbiesList() {
+    let projects;
+    if (this.profileData.hobbies) {
+      projects = this.profileData.hobbies.list;
+    }
+    return projects;
+  }
+
   @computed get experienceList() {
     let experienceList;
     if (this.profileData.experience) {
@@ -154,7 +193,7 @@ export default class ProfileStore implements IProfileStore {
   public getProfileData() {
     return profileRef.on('value', snapshot => {
       this.profileData = snapshot.val();
-      console.log(snapshot.val());
+
     });
   }
 }

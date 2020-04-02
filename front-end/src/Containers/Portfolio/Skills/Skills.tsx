@@ -20,7 +20,7 @@ const Skills = observer(() => {
     profileStore: { skillTitle, skillsList }
   } = useStores();
 
-  console.log(isVisible);
+
 
   return (
     <div ref={ref}>

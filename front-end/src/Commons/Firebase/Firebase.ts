@@ -15,5 +15,6 @@ firebase.initializeApp(config);
 
 const databaseRef = firebase.database().ref();
 export const profileRef = databaseRef.child('portfolio');
+export const messagesRef = databaseRef.child('messages')
 
 export default profileRef;

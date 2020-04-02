@@ -12,7 +12,10 @@ import react from '../../assets/Images/logos/react.png';
 import sass from '../../assets/Images/logos/sass.png';
 import webpack from '../../assets/Images/logos/webpack.png';
 import mobx from '../../assets/Images/logos/mobx.png';
+import sc from '../../assets/Images/logos/sc.png';
 import ts from '../../assets/Images/logos/ts.png';
+import python from '../../assets/Images/logos/python.png';
+import react360 from '../../assets/Images/logos/react360.png';
 
 const images: any = {
   angular,
@@ -29,6 +32,9 @@ const images: any = {
   sass,
   webpack,
   ts,
+  sc,
+  python,
+  react360,
   mobx
 };
 

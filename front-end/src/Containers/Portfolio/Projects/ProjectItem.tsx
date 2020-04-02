@@ -16,6 +16,7 @@ interface ProjectItemProps {
 
 export const ContainerFlippedCard = styled.div`
   position: relative;
+  height: 100%;
 `;
 const ProjectItem = ({ description, details }: ProjectItemProps) => {
   const [flipped, setFlipped] = useState(false);
@@ -23,7 +24,7 @@ const ProjectItem = ({ description, details }: ProjectItemProps) => {
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
     transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
-    config: { mass: 5, tension: 500, friction: 80 }
+    config: { mass: 10, tension: 500, friction: 100 }
   });
   return (
     <ContainerFlippedCard>
@@ -32,6 +33,7 @@ const ProjectItem = ({ description, details }: ProjectItemProps) => {
           position: 'absolute',
           top: 0,
           left: 0,
+          height: '100%',
           width: '100%',
           zIndex: !flipped ? 10 : 1,
           opacity: opacity.interpolate((o: any) => 1 - o),

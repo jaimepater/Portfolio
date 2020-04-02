@@ -10,6 +10,7 @@ import {useSpring, animated as a, interpolate, config} from "react-spring";
 import styled from "styled-components";
 import {IExperienceList} from "../../../../Commons/Stores/ProfileStore";
 import ExperienceCard from "./ExperienceCard";
+import getPosition from "../../../../Commons/Utils/getPosition";
 
 
 
@@ -44,13 +45,7 @@ const DateFrom = styled(DateTo)`
 
 const ExperienceItem = ({item}: ExperienceItemProps) => {
 
-  const getPosition = (x1 : number, y1  :number, x2  :number, y2 : number, x : number ) => {
-    const slope = (y2 -y1) / (x2 -x1);
-    const line = slope * ( x - x1) + y1;
-    let result =  x - x2 > 0 ? 0 : line ;
-    result = result >= y1 ? y1 : result;
-    return result;
-  };
+
 
   const [{ top , left } , set] = useSpring(() => ({top: 0 , left: 0 , config: config.molasses}));
   const rootNode = useRef<any>();
@@ -58,8 +53,10 @@ const ExperienceItem = ({item}: ExperienceItemProps) => {
   const onScroll = useCallback(() => {
     if (rootNode.current) {
       const topScroll = (rootNode.current.getBoundingClientRect().top) as number;
-      const positionTop = getPosition(window.innerHeight/2,50, window.innerHeight,-20, topScroll);
-      const positionLeft = getPosition(window.innerHeight/2,50, window.innerHeight,-50, topScroll);
+      const positionTop = getPosition(window.innerHeight,-20, 0,50, topScroll);
+      const positionLeft = getPosition(window.innerHeight,-50, 0,50, topScroll);
+
+
       return set({top: positionTop , left : positionLeft});
     }
 

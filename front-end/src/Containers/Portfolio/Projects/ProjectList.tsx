@@ -16,11 +16,13 @@ interface ProjectListProps {
 const ProjectList = ({ projects }: ProjectListProps) => {
   return (
     <Container>
-      <Grid container direction="row" justify="center" alignItems="center">
+      <Grid container direction="row" spacing={3} justify="center">
         {projects.map(project => (
           <Grid item xs={3}>
             <ProjectItem
-              description={<ProjectSummary project={project}  descriptionLength={80}/>}
+              description={
+                <ProjectSummary project={project} descriptionLength={80} />
+              }
               details={<ProjectDetails project={project} />}
             />
           </Grid>

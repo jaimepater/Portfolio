@@ -2,8 +2,19 @@
     "profile" : {
       "firstName" : "Jaime",
       "lastName" : "Paternina Roa",
-      "list" : [ "Electronic engineer", "UI engineer", "React Developer", "IoT enthusiast" ]
-  },
+      "list" : [ "Electronic engineer", "UI engineer", "React Developer", "IoT enthusiast" ],
+
+      "github":
+      "https://github.com/jaimepater/",
+
+      "linkedin":
+      "https://www.linkedin.com/in/jaime-paternina-roa",
+      "mail":
+      "jepr.88@gmail.com",
+      "strava":
+      "https://www.strava.com/athletes/12495178,"
+
+    },
   "experience" : {
     "title" : "Work experience",
     "list": []

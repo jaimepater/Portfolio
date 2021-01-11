@@ -11,7 +11,7 @@ interface SkillsListProps {
 const StyledContainer = styled.div`
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 
 const SkillsList = ({ skillsList }: SkillsListProps) => {

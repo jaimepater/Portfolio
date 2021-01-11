@@ -13,14 +13,12 @@ import SkillsList from './SkillsList';
 const Skills = observer(() => {
   const [ref, isVisible] = useInView({
     threshold: 1,
-    unobserveOnEnter: true
+    unobserveOnEnter: true,
   });
 
   const {
-    profileStore: { skillTitle, skillsList }
+    profileStore: { skillTitle, skillsList },
   } = useStores();
-
-
 
   return (
     <div ref={ref}>

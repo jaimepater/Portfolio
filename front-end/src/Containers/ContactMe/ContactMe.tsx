@@ -1,13 +1,7 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import { useRef, useState } from 'react';
-import {
-  Container,
-  TextField,
-  InputAdornment,
-  Button,
-  Paper
-} from '@material-ui/core';
+import { Container, TextField, InputAdornment, Button, Paper } from '@material-ui/core';
 import { AccountCircle } from '@material-ui/icons';
 import MailIcon from '@material-ui/icons/Mail';
 import { useForm } from 'react-hook-form';
@@ -35,6 +29,7 @@ const StyledButton = styled(Button)`
 
 const StyledPaper = styled(Paper)`
   width: 70%;
+  padding: 20px;
   ${H1} {
     font-size: ${props => props.theme.fontSize.lg};
   }
@@ -42,13 +37,13 @@ const StyledPaper = styled(Paper)`
 
 const ContactMe = observer(() => {
   const {
-    messagesStore: { setMessage }
+    messagesStore: { setMessage },
   } = useStores();
   const [success, setSuccess] = useState(false);
   const [data, setData] = useState<IMessageData>({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
   const { register, handleSubmit, errors } = useForm();
   const recaptchaRef = useRef<any>();
@@ -69,7 +64,7 @@ const ContactMe = observer(() => {
   const activateCaptcha = (dataForm: any) => {
     if (recaptchaRef && recaptchaRef.current) {
       setData({
-        ...dataForm
+        ...dataForm,
       });
       recaptchaRef.current.execute();
     }
@@ -85,12 +80,7 @@ const ContactMe = observer(() => {
           sitekey="6LcI_eUUAAAAALK2sEEjyotjnms3HIJXLGgIaHr5"
         />
         <StyledPaper elevation={3}>
-          <Grid
-            container
-            direction="column"
-            justify="center"
-            alignItems="center"
-          >
+          <Grid container direction="column" justify="center" alignItems="center">
             <H1>Contact me</H1>
             {success ? (
               <Alert variant="filled" severity="success">
@@ -117,7 +107,7 @@ const ContactMe = observer(() => {
                       <InputAdornment position="start">
                         <AccountCircle />
                       </InputAdornment>
-                    )
+                    ),
                   }}
                 />
                 <TextField
@@ -131,15 +121,15 @@ const ContactMe = observer(() => {
                     required: true,
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                      message: 'invalid email address'
-                    }
+                      message: 'invalid email address',
+                    },
                   })}
                   InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
                         <MailIcon />
                       </InputAdornment>
-                    )
+                    ),
                   }}
                 />
               </div>

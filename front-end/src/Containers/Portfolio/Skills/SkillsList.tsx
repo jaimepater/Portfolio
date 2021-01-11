@@ -1,8 +1,3 @@
-/**
- *
- * SkillsList
- *
- */
 import * as React from 'react';
 import { Container, Grid } from '@material-ui/core';
 import styled from 'styled-components';
@@ -13,22 +8,24 @@ interface SkillsListProps {
   skillsList: Array<ISkill>;
 }
 
+const StyledContainer = styled.div`
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+`;
+
 const SkillsList = ({ skillsList }: SkillsListProps) => {
   return (
     <Container fixed>
-      <Grid
-        container
-        spacing={8}
-        direction="row"
-        justify="center"
-        alignItems="center"
-      >
-        {skillsList.map((skill, index) => (
-          <Grid item xs={12} sm={2}>
-            <SkillsItem skill={skill} index={index} />
-          </Grid>
-        ))}
-      </Grid>
+      <StyledContainer>
+        <Grid container spacing={8} direction="row" justify="center" alignItems="center">
+          {skillsList.map((skill, index) => (
+            <Grid item xs={6} sm={4} md={3} lg={2}>
+              <SkillsItem skill={skill} index={index} />
+            </Grid>
+          ))}
+        </Grid>
+      </StyledContainer>
     </Container>
   );
 };

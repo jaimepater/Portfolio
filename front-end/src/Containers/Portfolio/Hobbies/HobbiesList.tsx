@@ -17,7 +17,7 @@ const HobbiesList = ({ list }: HobbiesListProps) => {
       <Grid container direction="row" spacing={3} justify="center">
         {list &&
           list.map(hobbies => (
-            <Grid item xs={3}>
+            <Grid item xs={12} sm={6} lg={3}>
               <HobbiesItem hobbies={hobbies} />
             </Grid>
           ))}

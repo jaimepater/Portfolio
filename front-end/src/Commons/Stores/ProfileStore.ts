@@ -1,6 +1,5 @@
 import { action, computed, observable } from 'mobx';
 import moment, { Moment } from 'moment';
-import ts from 'typescript/lib/tsserverlibrary';
 import { profileRef } from '../Firebase/Firebase';
 
 const NOW = 'Now';
@@ -88,9 +87,7 @@ export default class ProfileStore implements IProfileStore {
   @computed get fullName() {
     let name = '';
     if (this.profileData.profile) {
-      name = `${this.profileData!.profile!.firstName} ${
-        this.profileData!.profile!.lastName
-      }`;
+      name = `${this.profileData!.profile!.firstName} ${this.profileData!.profile!.lastName}`;
     }
     return name;
   }
@@ -173,7 +170,7 @@ export default class ProfileStore implements IProfileStore {
       experienceList = this.profileData.experience.list.map(item => ({
         ...item,
         from: this.getDate(item.from),
-        to: this.getDate(item.to)
+        to: this.getDate(item.to),
       }));
     }
     return experienceList;
@@ -185,7 +182,7 @@ export default class ProfileStore implements IProfileStore {
     }
     return {
       date: moment(stringDate),
-      display: moment(stringDate).format(FORMAT)
+      display: moment(stringDate).format(FORMAT),
     };
   };
 
@@ -193,7 +190,6 @@ export default class ProfileStore implements IProfileStore {
   public getProfileData() {
     return profileRef.on('value', snapshot => {
       this.profileData = snapshot.val();
-
     });
   }
 }

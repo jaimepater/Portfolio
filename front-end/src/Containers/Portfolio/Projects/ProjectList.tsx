@@ -13,16 +13,15 @@ import ProjectDetails from './ProjectDetails';
 interface ProjectListProps {
   projects: Array<IProject>;
 }
+
 const ProjectList = ({ projects }: ProjectListProps) => {
   return (
     <Container>
       <Grid container direction="row" spacing={3} justify="center">
         {projects.map(project => (
-          <Grid item xs={3}>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
             <ProjectItem
-              description={
-                <ProjectSummary project={project} descriptionLength={80} />
-              }
+              description={<ProjectSummary project={project} descriptionLength={80} />}
               details={<ProjectDetails project={project} />}
             />
           </Grid>

@@ -9,11 +9,11 @@ import useStores from '../../../Commons/Hooks/Stores';
 import HobbiesBanner from './HobbiesBanner/HobbiesBanner';
 import HobbiesList from './HobbiesList';
 
-interface HobbiesProps {}
 const Hobbies = observer(() => {
   const {
-    profileStore: { hobbiesTitle, hobbiesList }
+    profileStore: { hobbiesTitle, hobbiesList },
   } = useStores();
+
   return (
     <>
       {hobbiesTitle && <HobbiesBanner title={hobbiesTitle} />}

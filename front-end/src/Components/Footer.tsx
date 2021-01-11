@@ -6,7 +6,7 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import styled, { DefaultTheme } from 'styled-components';
-import { Container, Grid, IconButton } from '@material-ui/core';
+import { Grid, IconButton } from '@material-ui/core';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -17,12 +17,19 @@ import getLogo from '../Commons/Utils/getLogo';
 export const StyledFooter = styled.footer`
   margin-top: 30px;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: flex;
   color: #fff;
   justify-items: center;
   background-color: #3f51b5;
   min-height: 64px;
-  box-shadow: 0px -4px 5px 0px rgba(0, 0, 0, 0.14),
-    0px -2px 4px -1px rgba(0, 0, 0, 0.2), 0px -1px 10px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px -4px 5px 0px rgba(0, 0, 0, 0.14), 0px -2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px -1px 10px 0px rgba(0, 0, 0, 0.12);
+`;
+
+export const StyledGrid = styled(Grid)`
+  padding: 20px;
 `;
 
 export const StyledFindMe = styled.div`
@@ -43,13 +50,7 @@ interface IStyleIconButton {
 }
 
 const LogoFooter = ({ name }: { name: string }) => (
-  <Grid
-    container
-    spacing={2}
-    direction="row"
-    justify="flex-start"
-    alignItems="center"
-  >
+  <Grid container spacing={2} direction="row" justify="flex-start" alignItems="center">
     <Grid item>
       <Logo />
     </Grid>
@@ -60,13 +61,7 @@ const LogoFooter = ({ name }: { name: string }) => (
 );
 
 const FindMeFooter = (props: socialNetworksProps) => (
-  <Grid
-    container
-    spacing={1}
-    direction="row"
-    justify="flex-start"
-    alignItems="center"
-  >
+  <Grid container spacing={1} direction="row" justify="flex-start" alignItems="center">
     <Grid item>
       <StyledFindMe>Find me</StyledFindMe>
     </Grid>
@@ -83,35 +78,24 @@ interface socialNetworksProps {
   linkedin: string | undefined;
 }
 
-const SocialNetworks = ({
-  github,
-  linkedin,
-  mail,
-  strava
-}: socialNetworksProps) => (
-  <Grid
-    container
-    spacing={0}
-    direction="row"
-    justify="flex-start"
-    alignItems="center"
-  >
-    <Grid item xs={4}>
+const SocialNetworks = ({ github, linkedin, mail, strava }: socialNetworksProps) => (
+  <Grid container spacing={0} direction="row" justify="flex-start" alignItems="center">
+    <Grid item md={4}>
       <StyleIconButton component="a" size="small" href={github || ''}>
         <GitHubIcon fontSize="small" />
       </StyleIconButton>
     </Grid>
-    <Grid item xs={4}>
+    <Grid item md={4}>
       <StyleIconButton component="a" size="small" href={linkedin || ''}>
         <LinkedInIcon fontSize="small" />
       </StyleIconButton>
     </Grid>
-    <Grid item xs={4}>
+    <Grid item md={4}>
       <StyleIconButton component="a" size="small" href={`mailto:${mail}`}>
         <MailOutlineIcon fontSize="small" />
       </StyleIconButton>
     </Grid>
-    <Grid item xs={4}>
+    <Grid item md={4}>
       <StyleIconButton component="a" size="small" href={strava || ''}>
         {getLogo('Strava', { fontSize: 'large', style: { height: '0.5rem' } })}
       </StyleIconButton>
@@ -121,27 +105,19 @@ const SocialNetworks = ({
 
 const Footer = observer(() => {
   const {
-    profileStore: { profile, fullName }
+    profileStore: { profile, fullName },
   } = useStores();
   const { strava, github, linkedin, mail } = profile || {};
   return (
     <StyledFooter>
-      <Container disableGutters={true}>
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="space-between"
-          alignItems="center"
-        >
-          <Grid item>
-            <LogoFooter name={fullName} />
-          </Grid>
-          <Grid item>
-            <FindMeFooter {...{ strava, github, linkedin, mail }} />
-          </Grid>
+      <StyledGrid container spacing={2} direction="row" justify="space-between" alignItems="center">
+        <Grid item>
+          <LogoFooter name={fullName} />
         </Grid>
-      </Container>
+        <Grid item>
+          <FindMeFooter {...{ strava, github, linkedin, mail }} />
+        </Grid>
+      </StyledGrid>
     </StyledFooter>
   );
 });

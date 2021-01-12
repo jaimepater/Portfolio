@@ -2,6 +2,7 @@ import { action, computed, observable } from 'mobx';
 import moment, { Moment } from 'moment';
 import { log } from 'util';
 import { profileRef } from '../Firebase/Firebase';
+import { getProfileRef } from '../Firebase/database';
 
 const NOW = 'Now';
 const FORMAT = 'MMM YYYY';
@@ -188,8 +189,9 @@ export default class ProfileStore implements IProfileStore {
   };
 
   @action
-  public getProfileData() {
-    return profileRef.on('value', snapshot => {
+  public async getProfileData() {
+    const ref = await getProfileRef();
+    return ref.on('value', snapshot => {
       this.profileData = snapshot.val();
     });
   }

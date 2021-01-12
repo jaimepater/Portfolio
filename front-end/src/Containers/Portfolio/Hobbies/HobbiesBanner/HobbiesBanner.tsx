@@ -41,7 +41,6 @@ const HobbiesBanner = ({}: HobbiesBannerProps) => {
     if (rootNode.current) {
       const topScroll = rootNode.current.getBoundingClientRect().top as number;
       const positionBike = getPosition(0, 0, -window.innerHeight, 77, topScroll);
-      console.log('aaaaaaa', positionBike);
       const positionSun = getPosition(
         window.innerHeight / 5,
         8,

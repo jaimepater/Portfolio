@@ -41,7 +41,7 @@ const ExperienceItem = ({ item }: ExperienceItemProps) => {
       const positionLeft = getPosition(window.innerHeight, -50, 0, 50, topScroll);
       return set({ top: positionTop, left: positionLeft });
     }
-    return undefined;
+    return '';
   }, []);
 
   const positionY = top.interpolate(y => `${y}%`);

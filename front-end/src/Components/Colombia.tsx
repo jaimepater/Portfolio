@@ -1,7 +1,5 @@
-import * as React from 'react';
 import styled from 'styled-components';
 import imageColombia from '../assets/Images/Colombia.svg';
-
 
 const Colombia = styled.div`
   background-image: url(${imageColombia});

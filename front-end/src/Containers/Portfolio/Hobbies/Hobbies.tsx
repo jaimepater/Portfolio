@@ -11,12 +11,12 @@ import HobbiesList from './HobbiesList';
 
 const Hobbies = observer(() => {
   const {
-    profileStore: { hobbiesTitle, hobbiesList },
+    profileStore: { hobbiesList },
   } = useStores();
 
   return (
     <>
-      {hobbiesTitle && <HobbiesBanner title={hobbiesTitle} />}
+      <HobbiesBanner />
       {hobbiesList && <HobbiesList list={hobbiesList} />}
     </>
   );

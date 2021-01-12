@@ -5,14 +5,12 @@
  */
 import * as React from 'react';
 import { CardContent, CardHeader, Collapse, Fab } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
+
 import CardActions from '@material-ui/core/CardActions';
-import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import KeyboardArrowLeftSharpIcon from '@material-ui/icons/KeyboardArrowLeftSharp';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import styled, { DefaultTheme } from 'styled-components';
+import styled from 'styled-components';
 import IconButton from '@material-ui/core/IconButton';
 import { useState } from 'react';
 import { IProject } from '../../../Commons/Stores/ProfileStore';
@@ -39,12 +37,12 @@ const StyledCardHeader = styled(CardHeader)`
 const StyledIconButton = styled(IconButton)`
   margin-left: auto;
   transform: ${(props: IIconButton) =>
-    props.expanded ? 'rotate(180deg)' : 'rotate(0deg)'};
+    props.expanded === 'true' ? 'rotate(180deg)' : 'rotate(0deg)'};
   transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 `;
 
 interface IIconButton {
-  expanded: boolean;
+  expanded: string;
 }
 
 const ProjectDetails = ({ project, toggle }: ProjectDetailsProps) => {
@@ -58,12 +56,7 @@ const ProjectDetails = ({ project, toggle }: ProjectDetailsProps) => {
     <Card>
       <StyledCardHeader
         action={
-          <Fab
-            color="primary"
-            aria-label="add"
-            size="small"
-            onClick={handleToggle}
-          >
+          <Fab color="primary" aria-label="add" size="small" onClick={handleToggle}>
             <KeyboardArrowLeftSharpIcon />
           </Fab>
         }
@@ -75,7 +68,7 @@ const ProjectDetails = ({ project, toggle }: ProjectDetailsProps) => {
         <StyledIconButton
           aria-label="show more"
           onClick={toggleExpand}
-          expanded={expanded}
+          expanded={expanded.toString()}
         >
           <ExpandMoreIcon />
         </StyledIconButton>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled, { DefaultTheme } from 'styled-components';
+import styled from 'styled-components';
 import image from '../../../assets/Images/Experience.png';
 
 export const ParallaxContainer = styled.div`

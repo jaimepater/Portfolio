@@ -19,9 +19,15 @@ interface ExperienceListProps {
 }
 const ExperienceList = ({ experienceList }: ExperienceListProps) => {
   return (
-    <StyledContainer>
-      {experienceList && experienceList.map(item => <ExperienceItem key={item.id} item={item} />)}
-    </StyledContainer>
+    <>
+      {experienceList && (
+        <StyledContainer>
+          {experienceList.map(item => (
+            <ExperienceItem key={item.id} item={item} />
+          ))}
+        </StyledContainer>
+      )}
+    </>
   );
 };
 

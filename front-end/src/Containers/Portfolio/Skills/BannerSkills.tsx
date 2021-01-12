@@ -1,12 +1,6 @@
-/**
- *
- * BannerSkills
- *
- */
 import * as React from 'react';
-import { useState, useEffect, useRef } from 'react';
-import { Card, Container } from '@material-ui/core';
-import { useInView } from 'react-hook-inview';
+import { useState, useEffect } from 'react';
+import { Container } from '@material-ui/core';
 import styled from 'styled-components';
 import H2 from '../../../Components/H2';
 
@@ -27,7 +21,7 @@ interface BannerSkillsProps {
 const BannerSkills = ({ text: fullText }: BannerSkillsProps) => {
   const [txt, setTxt] = useState('');
   const tick = () => {
-    const delta = 400 - Math.random() * 100
+    const delta = 400 - Math.random() * 100;
     if (txt !== fullText) {
       setTimeout(() => {
         setTxt(fullText.substring(0, txt.length + 1));

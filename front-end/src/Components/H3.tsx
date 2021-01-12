@@ -1,9 +1,3 @@
-/**
- *
- * H3
- *
- */
-import * as React from 'react';
 import styled from 'styled-components';
 
 const H3 = styled.h3`

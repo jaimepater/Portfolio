@@ -103,7 +103,12 @@ const ExperienceCard = ({ item }: ExperienceCardProps) => {
       <Divider variant="middle" />
       <CardContent>
         {responsibilities.map(resp => (
-          <Bulleted text={<Text>{resp}</Text>} icon={<CheckCircleIcon />} color={color} />
+          <Bulleted
+            key={resp}
+            text={<Text>{resp}</Text>}
+            icon={<CheckCircleIcon />}
+            color={color}
+          />
         ))}
         <Technologies technologies={technologies} />
       </CardContent>

@@ -8,8 +8,7 @@ import { Card, CardContent } from '@material-ui/core';
 import styled, { DefaultTheme } from 'styled-components';
 import { useSpring } from 'react-spring';
 import { Hobbie } from '../../../Commons/Stores/ProfileStore';
-import H3 from '../../../Components/H3';
-import Bike from '../../../Components/Logos/Bike';
+
 import getLogo from '../../../Commons/Utils/getLogo';
 import H2 from '../../../Components/H2';
 
@@ -68,35 +67,31 @@ const Title = styled(H2)`
 const HobbiesItem = ({ hobbies }: HobbiesItemProps) => {
   const [propsLogo, setLogo] = useSpring(() => ({
     top: '50%',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
   }));
 
   const activateHover = () => {
     setLogo({
       top: '0%',
-      transform: 'translate(-50%, 0%)'
+      transform: 'translate(-50%, 0%)',
     });
   };
 
   const deactivateHover = () => {
     setLogo({
       top: '50%',
-      transform: 'translate(-50%, -50%)'
+      transform: 'translate(-50%, -50%)',
     });
   };
   return (
-    <StyledCard
-      color={hobbies.color}
-      onMouseMove={activateHover}
-      onMouseLeave={deactivateHover}
-    >
+    <StyledCard color={hobbies.color} onMouseMove={activateHover} onMouseLeave={deactivateHover}>
       {getLogo(hobbies.logo, {
         left: '50%',
         top: '50%',
         height: '50%',
         style: propsLogo,
         width: '50%',
-        position: 'absolute'
+        position: 'absolute',
       })}
       <CardContent>
         <Title>{hobbies.title}</Title>

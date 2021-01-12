@@ -1,12 +1,6 @@
-import { default as React } from 'react';
+import * as React from 'react';
 import styled, { DefaultTheme, keyframes } from 'styled-components';
 import H2 from '../../../Components/H2';
-
-const fadeUp = keyframes`
-  from { opacity: 0; }
-  to { opacity: 1; }
-`;
-
 
 // Create the keyframes
 const animation = keyframes`
@@ -28,11 +22,11 @@ const animation = keyframes`
   }
 `;
 export const TextProfile = styled(H2)`
- font-family: 'Roboto';
+  font-family: 'Roboto';
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
-      line-height: normal;
+  line-height: normal;
   animation: ${animation} ${(props: ITextProfile) => props.time} linear;
   animation-iteration-count: initial;
   letter-spacing: normal;
@@ -42,19 +36,18 @@ export const TextProfile = styled(H2)`
 `;
 
 interface IProfileItemProps {
-  profile: string,
-  time: number,
+  profile: string;
+  time: number;
 }
 
 interface ITextProfile {
-  theme: DefaultTheme,
-  time: string,
+  theme: DefaultTheme;
+  time: string;
 }
 
-const ProfileItem = ({ profile, time } : IProfileItemProps) => {
+const ProfileItem = ({ profile, time }: IProfileItemProps) => {
   const animationTime = `${time / 1000}s`;
-  return (<TextProfile time={animationTime}>{profile}</TextProfile>);
+  return <TextProfile time={animationTime}>{profile}</TextProfile>;
 };
-
 
 export default ProfileItem;

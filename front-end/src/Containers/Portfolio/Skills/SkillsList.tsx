@@ -20,7 +20,7 @@ const SkillsList = ({ skillsList }: SkillsListProps) => {
       <StyledContainer>
         <Grid container spacing={8} direction="row" justify="center" alignItems="center">
           {skillsList.map((skill, index) => (
-            <Grid item xs={6} sm={4} md={3} lg={2}>
+            <Grid key={skill.id} item xs={6} sm={4} md={3} lg={2}>
               <SkillsItem skill={skill} index={index} />
             </Grid>
           ))}

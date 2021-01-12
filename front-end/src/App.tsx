@@ -18,7 +18,12 @@ const App = () => (
           <ContentGradient>
             <Switch>
               {getRoutes().map(route => (
-                <Route exact={route.exact} path={route.path} component={route.component} />
+                <Route
+                  key={route.path}
+                  exact={route.exact}
+                  path={route.path}
+                  component={route.component}
+                />
               ))}
             </Switch>
             <Footer />

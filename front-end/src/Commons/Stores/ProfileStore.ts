@@ -1,5 +1,6 @@
 import { action, computed, observable } from 'mobx';
 import moment, { Moment } from 'moment';
+import { log } from 'util';
 import { profileRef } from '../Firebase/Firebase';
 
 const NOW = 'Now';

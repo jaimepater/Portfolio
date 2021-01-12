@@ -17,10 +17,6 @@ import Landscape from './Landscape';
 
 import getPosition from '../../../../Commons/Utils/getPosition';
 
-interface HobbiesBannerProps {
-  title: string;
-}
-
 export const BannerContainer = styled.div`
   position: relative;
   margin-top: 30px;
@@ -31,7 +27,7 @@ export const BannerContainer = styled.div`
   overflow-x: hidden;
 `;
 
-const HobbiesBanner = ({}: HobbiesBannerProps) => {
+const HobbiesBanner = () => {
   const rootNode = useRef<any>();
   const [{ left: propsBike }, setBike] = useSpring(() => ({ left: 0 }));
   const [{ top: propsSun }, setSun] = useSpring(() => ({ top: 8 }));

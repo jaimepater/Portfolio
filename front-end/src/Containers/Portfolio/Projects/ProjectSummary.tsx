@@ -7,14 +7,11 @@ import * as React from 'react';
 import Card from '@material-ui/core/Card';
 import { CardContent, CardHeader, CardMedia, Grid } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import Typography from '@material-ui/core/Typography';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
-import { animated as a } from 'react-spring';
 import styled, { DefaultTheme } from 'styled-components';
 import IconButton from '@material-ui/core/IconButton';
 import { IProject } from '../../../Commons/Stores/ProfileStore';
-import H3 from '../../../Components/H3';
 import getImage from '../../../Commons/Utils/getImage';
 
 const Logo = styled.div`
@@ -34,11 +31,7 @@ interface ILogo {
 
 const MainTechImages = styled.div`
   background-color: ${(props: IMainTechImages) => props.color};
-  background-image: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.2),
-    rgba(0, 0, 0, 0.2)
-  );
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
   width: calc(100% + 32px);
   height: 100%;
   margin: 0 -16px 0-16px;
@@ -55,15 +48,10 @@ const StyledCard = styled(Card)`
   flex-direction: column;
 `;
 
-const StyledCardActions = styled(CardActions)`
-`;
+const StyledCardActions = styled(CardActions)``;
 
 const StyledGrid = styled(Grid)`
   padding: 5% 0;
-`;
-
-const Title = styled(H3)`
-  margin: 0;
 `;
 
 const Description = styled.span`
@@ -79,11 +67,7 @@ interface ProjectSummaryProps {
   descriptionLength: number;
 }
 
-const ProjectSummary = ({
-  project,
-  toggle,
-  descriptionLength
-}: ProjectSummaryProps) => {
+const ProjectSummary = ({ project, toggle, descriptionLength }: ProjectSummaryProps) => {
   const openGitHub = () => {
     window.open(project.github);
   };
@@ -107,7 +91,7 @@ const ProjectSummary = ({
         <MainTechImages color={project.color}>
           <Grid container direction="row" justify="center" alignItems="center">
             {project.mainTechnologies.map(tech => (
-              <StyledGrid item xs={4}>
+              <StyledGrid key={tech} item xs={4}>
                 <Logo image={getImage(tech)} />
               </StyledGrid>
             ))}
@@ -115,10 +99,7 @@ const ProjectSummary = ({
         </MainTechImages>
       </CardMedia>
       <CardContent>
-        <Description>{`${project.description.substring(
-          0,
-          descriptionLength
-        )}...`}</Description>
+        <Description>{`${project.description.substring(0, descriptionLength)}...`}</Description>
       </CardContent>
       <StyledCardActions>
         <Button size="small" color="primary" onClick={handleToggle}>

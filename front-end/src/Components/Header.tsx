@@ -1,11 +1,5 @@
 import * as React from 'react';
-import {
-  AppBar,
-  Button,
-  IconButton,
-  MenuList,
-  Toolbar
-} from '@material-ui/core';
+import { AppBar, IconButton, MenuList, Toolbar } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Link, useLocation } from 'react-router-dom';

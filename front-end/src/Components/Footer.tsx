@@ -19,6 +19,7 @@ export const StyledFooter = styled.footer`
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  overflow-y: hidden;
   display: flex;
   color: #fff;
   justify-items: center;

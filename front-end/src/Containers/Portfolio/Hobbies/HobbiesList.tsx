@@ -1,15 +1,10 @@
-/**
- *
- * HobbiesList
- *
- */
 import * as React from 'react';
 import { Container, Grid } from '@material-ui/core';
-import { Hobbie } from '../../../Commons/Stores/ProfileStore';
+import { Hobie } from '../../../Definitions/definitions';
 import HobbiesItem from './HobbiesItem';
 
 interface HobbiesListProps {
-  list: Array<Hobbie>;
+  list: Array<Hobie>;
 }
 const HobbiesList = ({ list }: HobbiesListProps) => {
   return (

@@ -35,7 +35,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generator": " plop --plopfile generators/index.js"
+    "generator": " plop --plopfile generators/index.js",
+    "lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.tsx,.ts,.tsx ./src "
   },
   "eslintConfig": {
     "extends": "react-app"

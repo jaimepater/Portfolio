@@ -13,8 +13,8 @@ export const AvatarBorder = styled.div`
   display: flex;
   border-radius: 50%;
   padding: 7px;
-  background-color:  ${props => props.theme.palette.white};
-  border: 3px solid   ${props => props.theme.palette.blue1};
+  background-color: ${props => props.theme.palette.white};
+  border: 3px solid ${props => props.theme.palette.blue1};
   z-index: 2;
 `;
 

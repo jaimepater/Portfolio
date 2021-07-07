@@ -26,8 +26,6 @@ export const Title = styled.span`
 
 interface BannerParallaxProps {
   title: string;
-  // eslint-disable-next-line react/no-unused-prop-types
-  height: number;
 }
 
 const BannerParallax = ({ title }: BannerParallaxProps) => {

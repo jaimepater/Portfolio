@@ -1,8 +1,3 @@
-/**
- *
- * Strava
- *
- */
 import * as React from 'react';
 import { SvgIconProps } from '@material-ui/core/SvgIcon';
 import { SvgIcon } from '@material-ui/core';

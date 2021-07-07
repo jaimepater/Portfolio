@@ -1,16 +1,11 @@
-/**
- *
- * ProjectItem
- *
- */
 import * as React from 'react';
 import { useState } from 'react';
 import { useSpring, animated as a } from 'react-spring';
 import styled from 'styled-components';
 
 interface ProjectItemProps {
-  description: any;
-  details: any;
+  description: React.ReactElement;
+  details: React.ReactElement;
 }
 
 export const ContainerFlippedCard = styled.div`

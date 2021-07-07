@@ -1,8 +1,3 @@
-/**
- *
- * Footer
- *
- */
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import styled, { DefaultTheme } from 'styled-components';

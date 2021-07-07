@@ -35,7 +35,7 @@ const images: any = {
   sc,
   python,
   react360,
-  mobx
+  mobx,
 };
 
 const getImage = (key: string) => images[key];

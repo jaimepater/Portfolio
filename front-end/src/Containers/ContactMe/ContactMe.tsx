@@ -12,7 +12,7 @@ import Alert from '@material-ui/lab/Alert';
 import ReCAPTCHA from 'react-google-recaptcha';
 import useStores from '../../Commons/Hooks/Stores';
 import H1 from '../../Components/H1';
-import { IMessageData } from '../../Commons/Stores/MessagesStore';
+import { MessageData } from '../../Commons/Stores/MessagesStore';
 
 const StyledContainer = styled(Container)`
   height: 100vh;
@@ -35,24 +35,30 @@ const StyledPaper = styled(Paper)`
   }
 `;
 
+interface DataForm {
+  name: string;
+  email: string;
+  message: string;
+}
+
 const ContactMe = observer(() => {
   const {
     messagesStore: { setMessage },
   } = useStores();
   const [success, setSuccess] = useState(false);
-  const [data, setData] = useState<IMessageData>({
+  const [data, setData] = useState<MessageData>({
     name: '',
     email: '',
     message: '',
   });
-  const { register, handleSubmit, errors } = useForm();
-  const recaptchaRef = useRef<any>();
-  const formRef = useRef<any>();
+  const { register, handleSubmit, errors } = useForm<DataForm>();
+  const recaptchaRef = useRef<ReCAPTCHA>();
+  const formRef = useRef<HTMLFormElement>(null);
   const errorMessage = 'This field is require';
 
   const onSuccess = () => {
     if (formRef) {
-      formRef.current.reset();
+      formRef.current?.reset();
       setSuccess(true);
     }
   };
@@ -61,7 +67,7 @@ const ContactMe = observer(() => {
     setMessage(data, onSuccess);
   };
 
-  const activateCaptcha = (dataForm: any) => {
+  const activateCaptcha = (dataForm: DataForm) => {
     if (recaptchaRef && recaptchaRef.current) {
       setData({
         ...dataForm,

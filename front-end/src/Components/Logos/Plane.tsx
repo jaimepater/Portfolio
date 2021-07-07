@@ -1,20 +1,8 @@
-/**
- *
- * Plane
- *
- */
 import * as React from 'react';
 import { animated as a } from 'react-spring';
+import { SvgImageProps } from '../../Definitions/definitions';
 
-interface PlaneProps {
-  left?: any;
-  width?: string;
-  top?: any;
-  height?: string;
-  position?: string;
-  style?: any;
-}
-const Plane = ({ left, height, position, style, width, top }: PlaneProps) => {
+const Plane = ({ left, height, position, style, width, top }: SvgImageProps) => {
   return (
     <a.svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,11 +11,7 @@ const Plane = ({ left, height, position, style, width, top }: PlaneProps) => {
       style={{ position, top, left, zIndex: 2, ...style }}
       viewBox="0 0 105.449 66.878"
     >
-      <g
-        id="Grupo_33"
-        data-name="Grupo 33"
-        transform="translate(1998 -4791.015)"
-      >
+      <g id="Grupo_33" data-name="Grupo 33" transform="translate(1998 -4791.015)">
         <g id="plane" transform="translate(-1998 4791.015)">
           <g id="Grupo_30" data-name="Grupo 30" transform="translate(0 0)">
             <path
@@ -104,11 +88,7 @@ const Plane = ({ left, height, position, style, width, top }: PlaneProps) => {
               fill="#cb5769"
             />
           </g>
-          <g
-            id="Grupo_32"
-            data-name="Grupo 32"
-            transform="translate(16.156 29.649)"
-          >
+          <g id="Grupo_32" data-name="Grupo 32" transform="translate(16.156 29.649)">
             <circle
               id="Elipse_9"
               data-name="Elipse 9"

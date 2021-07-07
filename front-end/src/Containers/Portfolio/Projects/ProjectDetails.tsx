@@ -1,8 +1,3 @@
-/**
- *
- * ProjectDetails
- *
- */
 import * as React from 'react';
 import { CardContent, CardHeader, Collapse, Fab } from '@material-ui/core';
 
@@ -13,12 +8,12 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import styled from 'styled-components';
 import IconButton from '@material-ui/core/IconButton';
 import { useState } from 'react';
-import { IProject } from '../../../Commons/Stores/ProfileStore';
+import { Project } from '../../../Definitions/definitions';
 import Technologies from '../../../Components/Technologies';
 
 interface ProjectDetailsProps {
-  project: IProject;
-  toggle?: any;
+  project: Project;
+  toggle?: Function;
 }
 
 const Description = styled.span`

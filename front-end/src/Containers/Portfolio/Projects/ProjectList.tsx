@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Container, Grid } from '@material-ui/core';
-import { IProject } from '../../../Commons/Stores/ProfileStore';
+import { Project } from '../../../Definitions/definitions';
 import ProjectItem from './ProjectItem';
 import ProjectSummary from './ProjectSummary';
 import ProjectDetails from './ProjectDetails';
 
 interface ProjectListProps {
-  projects: Array<IProject>;
+  projects: Array<Project>;
 }
 
 const ProjectList = ({ projects }: ProjectListProps) => {

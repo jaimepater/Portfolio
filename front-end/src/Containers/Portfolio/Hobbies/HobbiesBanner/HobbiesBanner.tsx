@@ -1,8 +1,3 @@
-/**
- *
- * HobbiesBanner
- *
- */
 import * as React from 'react';
 import styled from 'styled-components';
 import { useRef, useEffect, useCallback } from 'react';
@@ -28,7 +23,7 @@ export const BannerContainer = styled.div`
 `;
 
 const HobbiesBanner = () => {
-  const rootNode = useRef<any>();
+  const rootNode = useRef<HTMLDivElement>(null);
   const [{ left: propsBike }, setBike] = useSpring(() => ({ left: 0 }));
   const [{ top: propsSun }, setSun] = useSpring(() => ({ top: 8 }));
   const [{ left: propsClouds }, setClouds] = useSpring(() => ({ left: 40 }));

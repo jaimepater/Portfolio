@@ -11,7 +11,7 @@ const Projects = observer(() => {
 
   return (
     <div>
-      {projectsTitle && <BannerParellax title={projectsTitle} height={391} />}
+      {projectsTitle && <BannerParellax title={projectsTitle} />}
       {projectsList ? <ProjectList projects={projectsList} /> : null}
     </div>
   );

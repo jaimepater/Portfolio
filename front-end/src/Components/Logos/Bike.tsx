@@ -1,20 +1,8 @@
-/**
- *
- * Bike
- *
- */
 import * as React from 'react';
 import { animated as a } from 'react-spring';
+import { SvgImageProps } from '../../Definitions/definitions';
 
-interface BikeProps {
-  left?: any;
-  width?: string;
-  height?: string;
-  position?: any;
-  top?: string;
-  style?: any;
-}
-const Bike = ({ left, width, height, position, top, style }: BikeProps) => {
+const Bike = ({ left, width, height, position, top, style }: SvgImageProps) => {
   return (
     <a.svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,21 +11,9 @@ const Bike = ({ left, width, height, position, top, style }: BikeProps) => {
       style={{ position, top, left, ...style }}
       viewBox="0 0 617 353.891"
     >
-      <g
-        id="Grupo_26"
-        data-name="Grupo 26"
-        transform="translate(3199.541 -4384.731)"
-      >
-        <g
-          id="Grupo_22"
-          data-name="Grupo 22"
-          transform="translate(-3199.541 4385.231)"
-        >
-          <g
-            id="Grupo_18"
-            data-name="Grupo 18"
-            transform="translate(362.778 107.409)"
-          >
+      <g id="Grupo_26" data-name="Grupo 26" transform="translate(3199.541 -4384.731)">
+        <g id="Grupo_22" data-name="Grupo 22" transform="translate(-3199.541 4385.231)">
+          <g id="Grupo_18" data-name="Grupo 18" transform="translate(362.778 107.409)">
             <g id="Grupo_17" data-name="Grupo 17" transform="translate(0 0)">
               <g
                 id="Exclusión_1"
@@ -373,11 +349,7 @@ const Bike = ({ left, width, height, position, top, style }: BikeProps) => {
           </g>
           <g id="Grupo_20" data-name="Grupo 20" transform="translate(129.178)">
             <g id="Grupo_13" data-name="Grupo 13" transform="translate(0)">
-              <g
-                id="Grupo_12"
-                data-name="Grupo 12"
-                transform="translate(0 28.868)"
-              >
+              <g id="Grupo_12" data-name="Grupo 12" transform="translate(0 28.868)">
                 <path
                   id="Sustracción_2"
                   data-name="Sustracción 2"
@@ -397,11 +369,7 @@ const Bike = ({ left, width, height, position, top, style }: BikeProps) => {
                   strokeWidth="1"
                 />
               </g>
-              <g
-                id="Grupo_11"
-                data-name="Grupo 11"
-                transform="translate(266.322)"
-              >
+              <g id="Grupo_11" data-name="Grupo 11" transform="translate(266.322)">
                 <path
                   id="Trazado_13"
                   data-name="Trazado 13"

@@ -33,5 +33,5 @@ export const FontSize = {
   lg: '30px',
   md: '20px',
   sm: '16px',
-  xs: '14px'
+  xs: '14px',
 };

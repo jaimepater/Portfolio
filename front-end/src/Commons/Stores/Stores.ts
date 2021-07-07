@@ -4,7 +4,7 @@ import MessagesStore from './MessagesStore';
 
 const storesContext = React.createContext({
   profileStore: new ProfileStore(),
-  messagesStore: new MessagesStore()
+  messagesStore: new MessagesStore(),
 });
 
 export default storesContext;

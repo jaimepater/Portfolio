@@ -1,19 +1,14 @@
-/**
- *
- * HobbiesItem
- *
- */
 import * as React from 'react';
 import { Card, CardContent } from '@material-ui/core';
 import styled, { DefaultTheme } from 'styled-components';
 import { useSpring } from 'react-spring';
-import { Hobbie } from '../../../Commons/Stores/ProfileStore';
+import { Hobie } from '../../../Definitions/definitions';
 
-import getLogo from '../../../Commons/Utils/getLogo';
 import H2 from '../../../Components/H2';
+import getLogo from '../../../Commons/Utils/getLogo';
 
 interface HobbiesItemProps {
-  hobbies: Hobbie;
+  hobbies: Hobie;
 }
 
 const Description = styled.span`

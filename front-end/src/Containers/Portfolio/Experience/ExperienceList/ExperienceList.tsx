@@ -1,12 +1,7 @@
-/**
- *
- * ExperienceList
- *
- */
 import * as React from 'react';
 import { Container } from '@material-ui/core';
 import styled from 'styled-components';
-import { IExperienceList } from '../../../../Commons/Stores/ProfileStore';
+import { Experience } from '../../../../Definitions/definitions';
 import ExperienceItem from './ExperienceItem';
 
 const StyledContainer = styled(Container)`
@@ -15,7 +10,7 @@ const StyledContainer = styled(Container)`
 `;
 
 interface ExperienceListProps {
-  experienceList: Array<IExperienceList>;
+  experienceList: Array<Experience>;
 }
 const ExperienceList = ({ experienceList }: ExperienceListProps) => {
   return (

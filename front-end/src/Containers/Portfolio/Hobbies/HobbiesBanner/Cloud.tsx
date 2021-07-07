@@ -1,18 +1,8 @@
-/**
- *
- * Cloud
- *
- */
 import * as React from 'react';
 import { animated as a } from 'react-spring';
+import { SvgImageProps } from '../../../../Definitions/definitions';
 
-interface CloudProps {
-  top: any;
-  left: any;
-  height: any;
-  width: any;
-}
-const Cloud = ({ top, left, height, width }: CloudProps) => {
+const Cloud = ({ top, left, height, width }: SvgImageProps) => {
   return (
     <a.svg
       xmlns="http://www.w3.org/2000/svg"

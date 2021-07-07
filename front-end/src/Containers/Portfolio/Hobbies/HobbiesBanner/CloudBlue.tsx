@@ -1,18 +1,8 @@
-/**
- *
- * CloudBlue
- *
- */
 import * as React from 'react';
 import { animated as a } from 'react-spring';
+import { SvgImageProps } from '../../../../Definitions/definitions';
 
-interface CloudBlueProps {
-  top: any;
-  left: any;
-  height: any;
-  width: any;
-}
-const CloudBlue = ({ top, left, width, height }: CloudBlueProps) => {
+const CloudBlue = ({ top, left, width, height }: SvgImageProps) => {
   return (
     <a.svg
       viewBox="0 -87 463.83425 463"

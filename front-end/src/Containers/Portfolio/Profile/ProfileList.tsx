@@ -2,12 +2,12 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import ProfileItem from './ProfileItem';
 
-interface IProfileListProps {
+interface ProfileListProps {
   profiles: Array<string>;
   time: number;
 }
 
-const ProfileList = ({ profiles, time }: IProfileListProps) => {
+const ProfileList = ({ profiles, time }: ProfileListProps) => {
   const [profile, setProfile] = useState({ id: 0, name: '' });
   const showProfile = (index: any) => {
     if (!isNaN(index)) {

@@ -5,7 +5,7 @@ import { FontFaces, FontSize, Mexcellent, Typewriter } from './Fonts';
 
 export const Theme: DefaultTheme = {
   palette: Palette,
-  fontSize: FontSize
+  fontSize: FontSize,
 };
 
 export const GlobalStyle = createGlobalStyle`

@@ -1,8 +1,3 @@
-/**
- *
- * Skills
- *
- */
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import { useInView } from 'react-hook-inview';

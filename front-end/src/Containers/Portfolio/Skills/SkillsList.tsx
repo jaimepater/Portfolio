@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Container, Grid } from '@material-ui/core';
 import styled from 'styled-components';
-import { ISkill } from '../../../Commons/Stores/ProfileStore';
+import { Skill } from '../../../Definitions/definitions';
 import SkillsItem from './SkillsItem';
 
 interface SkillsListProps {
-  skillsList: Array<ISkill>;
+  skillsList: Array<Skill>;
 }
 
 const StyledContainer = styled.div`

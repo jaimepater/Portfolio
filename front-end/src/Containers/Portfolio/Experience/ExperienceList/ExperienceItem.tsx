@@ -4,10 +4,10 @@ import { useSpring, animated as a, interpolate, config } from 'react-spring';
 import styled from 'styled-components';
 import ExperienceCard from './ExperienceCard';
 import getPosition from '../../../../Commons/Utils/getPosition';
-import { IExperienceList } from '../../../../Commons/Stores/ProfileStore';
+import { Experience } from '../../../../Definitions/definitions';
 
 interface ExperienceItemProps {
-  item: IExperienceList;
+  item: Experience;
 }
 
 const StyledGridDate = styled(Grid)`
@@ -32,7 +32,7 @@ const DateFrom = styled(DateTo)`
 
 const ExperienceItem = ({ item }: ExperienceItemProps) => {
   const [{ top, left }, set] = useSpring(() => ({ top: 0, left: 0, config: config.molasses }));
-  const rootNode = useRef<any>();
+  const rootNode = useRef<HTMLDivElement>(null);
 
   const onScroll = useCallback(() => {
     if (rootNode.current) {

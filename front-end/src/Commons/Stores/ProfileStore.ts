@@ -1,90 +1,13 @@
 import { action, computed, observable } from 'mobx';
-import moment, { Moment } from 'moment';
-import { log } from 'util';
-import { profileRef } from '../Firebase/Firebase';
+import moment from 'moment';
 import { getProfileRef } from '../Firebase/database';
+import { PortfolioData } from '../../Definitions/definitions';
 
 const NOW = 'Now';
 const FORMAT = 'MMM YYYY';
 
-export interface IProfileStore {
-  profileData: IPortfolioData;
-  getProfileData: any;
-  fullName: any;
-  experienceTitle: any;
-  profiles: any;
-  experienceList: any;
-}
-
-export interface IPortfolioData {
-  profile?: {
-    firstName: string;
-    lastName: string;
-    github: string;
-    strava: string;
-    mail: string;
-    linkedin: string;
-    list: Array<string>;
-  };
-  experience?: {
-    title: string;
-    list: Array<IExperienceList>;
-  };
-  skills?: {
-    title: string;
-    list: Array<ISkill>;
-  };
-  projects?: {
-    title: string;
-    list: Array<IProject>;
-  };
-  hobbies?: {
-    title: string;
-    list: Array<Hobbie>;
-  };
-}
-
-export interface ISkill {
-  id: string;
-  name: string;
-  score: string;
-}
-
-export interface IExperienceList {
-  title: string;
-  id: string;
-  color: string;
-  responsibilities: Array<string>;
-  from: {
-    display: string;
-    date: Moment;
-  };
-  to: {
-    display: string;
-    date: Moment;
-  };
-  description: string;
-  technologies: Array<string>;
-}
-
-export interface IProject {
-  title: string;
-  color: string;
-  description: string;
-  github: string;
-  technologies: Array<string>;
-  mainTechnologies: Array<string>;
-}
-
-export interface Hobbie {
-  title: string;
-  color: string;
-  logo: string;
-  description: string;
-}
-
-export default class ProfileStore implements IProfileStore {
-  @observable profileData: IPortfolioData = {};
+export default class ProfileStore {
+  @observable profileData: PortfolioData = {};
 
   @computed get fullName() {
     let name = '';

@@ -1,30 +1,22 @@
-import { ComponentType, lazy, LazyExoticComponent } from 'react';
-
-export interface Route {
-  id: string;
-  path: string;
-  name: string;
-  exact: boolean;
-  component: LazyExoticComponent<ComponentType<any>>;
-}
+import { lazy } from 'react';
 
 const Home = lazy(() => import('../../Containers/Portfolio/Portfolio'));
 const ContactMe = lazy(() => import('../../Containers/ContactMe/ContactMe'));
-const routes: Array<Route> = [
+const routes = [
   {
     id: 'HOME',
     path: '/',
     name: 'Home',
     exact: true,
-    component: Home
+    component: Home,
   },
   {
     id: 'CONTACT_ME',
     path: '/contact-me',
     name: 'Contact Me',
     exact: true,
-    component: ContactMe
-  }
+    component: ContactMe,
+  },
 ];
 
 export const getRoutes = () => routes;

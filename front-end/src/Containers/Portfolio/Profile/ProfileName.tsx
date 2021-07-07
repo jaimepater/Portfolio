@@ -20,11 +20,11 @@ const Flag = styled.div`
   width: 40px;
 `;
 
-interface IProfileNameProps {
+interface ProfileNameProps {
   name: string;
 }
 
-const ProfileName = ({ name }: IProfileNameProps) => (
+const ProfileName = ({ name }: ProfileNameProps) => (
   <Grid container direction="row" justify="center" alignItems="center" spacing={1}>
     <Grid item>
       <Flag>

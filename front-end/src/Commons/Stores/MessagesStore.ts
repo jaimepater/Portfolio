@@ -1,21 +1,16 @@
 import { getMessagesRef } from '../Firebase/database';
 
-export interface IMessageStore {
-  setMessage: any;
-}
-
-export interface IMessageData {
+export interface MessageData {
   name: string;
   email: string;
   message: string;
 }
 
-export default class MessagesStore implements IMessageStore {
-  // eslint-disable-next-line class-methods-use-this
-  public async setMessage(data: IMessageData, reset: any) {
+export default class MessagesStore {
+  public setMessage = async (data: MessageData, reset: Function) => {
     const ref = await getMessagesRef();
     const newChildRef = ref.push();
     reset();
     newChildRef.set(data);
-  }
+  };
 }

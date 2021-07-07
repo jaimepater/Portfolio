@@ -1,16 +1,9 @@
-/**
- *
- * SkillsItem
- *
- */
 import * as React from 'react';
-import styled, { DefaultTheme, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { LinearProgress } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
-import { ISkill } from '../../../Commons/Stores/ProfileStore';
-import getImage from "../../../Commons/Utils/getImage";
-
-
+import { Skill } from '../../../Definitions/definitions';
+import getImage from '../../../Commons/Utils/getImage';
 
 const animation = keyframes`
 from {
@@ -25,8 +18,8 @@ from {
   }
 `;
 
-const Logo = styled.div`
-  background-image: ${(props: ILogo) => `url(${props.image})`};
+const Logo = styled.div<{ image: string }>`
+  background-image: ${props => `url(${props.image})`};
   width: 100%;
   height: 0;
   padding-top: 100%;
@@ -41,12 +34,12 @@ const ContainerImage = styled.div`
   height: 50%;
 `;
 
-const ContainerSkill = styled(Paper)`
+const ContainerSkill = styled(Paper)<{ delay: number }>`
   background-color: rgba(255, 255, 255, 0.3);
   padding: 7%;
   opacity: 0;
   animation: ${animation} 1s forwards;
-  animation-delay: ${(props: IContainerSkill) => `${props.delay}ms`};
+  animation-delay: ${props => `${props.delay}ms`};
 `;
 
 const StyledLinearProgress = styled(LinearProgress)`
@@ -68,18 +61,8 @@ const StyledText = styled.span`
   font-family: 'Roboto';
 `;
 
-interface ILogo {
-  theme: DefaultTheme;
-  image: string;
-}
-
-interface IContainerSkill {
-  theme: DefaultTheme;
-  delay: number;
-}
-
 interface SkillsItemProps {
-  skill: ISkill;
+  skill: Skill;
   index: number;
 }
 

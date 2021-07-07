@@ -1,15 +1,8 @@
-/**
- *
- * Sun
- *
- */
 import * as React from 'react';
 import { animated as a } from 'react-spring';
+import { SvgImageProps } from '../../../../Definitions/definitions';
 
-interface SunProps {
-  top: any;
-}
-const Sun = ({ top }: SunProps) => {
+const Sun = ({ top }: SvgImageProps) => {
   return (
     <a.svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,11 +11,7 @@ const Sun = ({ top }: SunProps) => {
       style={{ position: 'absolute', top, left: '47%' }}
       viewBox="0 0 191.333 191.333"
     >
-      <g
-        id="Grupo_29"
-        data-name="Grupo 29"
-        transform="translate(1738.152 -2200.088)"
-      >
+      <g id="Grupo_29" data-name="Grupo 29" transform="translate(1738.152 -2200.088)">
         <circle
           id="Elipse_7"
           data-name="Elipse 7"

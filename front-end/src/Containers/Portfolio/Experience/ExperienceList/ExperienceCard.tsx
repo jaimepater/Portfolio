@@ -1,23 +1,19 @@
-/**
- *
- * ExperienceCard
- *
- */
 import * as React from 'react';
 import { Card, CardContent, CardHeader } from '@material-ui/core';
 import styled, { DefaultTheme } from 'styled-components';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import Divider from '@material-ui/core/Divider';
-import { IExperienceList } from '../../../../Commons/Stores/ProfileStore';
+import { Experience } from '../../../../Definitions/definitions';
 import Ibm from '../../../../assets/Images/ibm.png';
 import Belatrix from '../../../../assets/Images/belatrix.png';
 import Bulleted from '../../../../Components/Bulleted';
 import Technologies from '../../../../Components/Technologies';
 import { FORMAT_DATES } from '../../../../Commons/constants';
 
-interface ExperienceCardProps {
-  item: IExperienceList;
-}
+const images = {
+  Belatrix,
+  IBM: Ibm,
+};
 
 const StyledCard = styled(Card)`
   min-height: 200px;
@@ -26,8 +22,13 @@ const StyledCard = styled(Card)`
   text-align: left;
 `;
 
+interface LogoProps {
+  theme: DefaultTheme;
+  image: string;
+}
+
 const Logo = styled.div`
-  background-image: ${(props: ILogo) => `url(${props.image})`};
+  background-image: ${(props: LogoProps) => `url(${props.image})`};
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -64,15 +65,9 @@ const StyledCardHeader = styled(CardHeader)`
   padding: 12px;
 `;
 
-interface ILogo {
-  theme: DefaultTheme;
-  image: string;
+interface ExperienceCardProps {
+  item: Experience;
 }
-
-const images: any = {
-  Belatrix,
-  IBM: Ibm,
-};
 
 const ExperienceCard = ({ item }: ExperienceCardProps) => {
   const {

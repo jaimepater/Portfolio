@@ -28,6 +28,11 @@ export interface PortfolioData {
   };
 }
 
+export interface FormattedDate {
+  display: string;
+  date: Moment;
+}
+
 export interface Skill {
   id: string;
   name: string;
@@ -39,14 +44,8 @@ export interface Experience {
   id: string;
   color: string;
   responsibilities: Array<string>;
-  from: {
-    display: string;
-    date: Moment;
-  };
-  to: {
-    display: string;
-    date: Moment;
-  };
+  from: FormattedDate | string;
+  to: FormattedDate | string;
   description: string;
   technologies: Array<string>;
 }

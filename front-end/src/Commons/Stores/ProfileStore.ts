@@ -12,7 +12,7 @@ export default class ProfileStore {
   @computed get fullName() {
     let name = '';
     if (this.profileData.profile) {
-      name = `${this.profileData!.profile!.firstName} ${this.profileData!.profile!.lastName}`;
+      name = `${this.profileData?.profile?.firstName} ${this.profileData?.profile?.lastName}`;
     }
     return name;
   }
@@ -94,14 +94,14 @@ export default class ProfileStore {
     if (this.profileData.experience) {
       experienceList = this.profileData.experience.list.map(item => ({
         ...item,
-        from: this.getDate(item.from),
-        to: this.getDate(item.to),
+        from: this.getDate(item.from as string),
+        to: this.getDate(item.to as string),
       }));
     }
     return experienceList;
   }
 
-  getDate = (stringDate: any) => {
+  getDate = (stringDate: string) => {
     if (stringDate === NOW) {
       return { date: moment(), display: NOW };
     }

@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader } from '@material-ui/core';
 import styled, { DefaultTheme } from 'styled-components';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import Divider from '@material-ui/core/Divider';
-import { Experience } from '../../../../Definitions/definitions';
+import { Experience, FormattedDate } from '../../../../Definitions/definitions';
 import Ibm from '../../../../assets/Images/ibm.png';
 import Belatrix from '../../../../assets/Images/belatrix.png';
 import Bulleted from '../../../../Components/Bulleted';
@@ -70,14 +70,9 @@ interface ExperienceCardProps {
 }
 
 const ExperienceCard = ({ item }: ExperienceCardProps) => {
-  const {
-    from: { date: fromDate },
-    title,
-    technologies,
-    color,
-    responsibilities,
-    to: { date: toDate },
-  } = item;
+  const { from, title, technologies, color, responsibilities, to } = item;
+  const fromDate = (from as FormattedDate).date;
+  const toDate = (to as FormattedDate).date;
   const differenceDate = fromDate.to(toDate, true);
   const subDates = (
     <SubDates>{`${toDate.format(FORMAT_DATES)} - ${fromDate.format(FORMAT_DATES)}`}</SubDates>

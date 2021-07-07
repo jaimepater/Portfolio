@@ -1,4 +1,8 @@
 import { Moment } from 'moment';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+// eslint-disable-next-line import/no-unresolved
+import { Position } from 'csstype';
 
 export interface PortfolioData {
   profile?: {
@@ -70,7 +74,7 @@ export interface SvgImageProps {
   left?: string;
   width?: string | number;
   height?: string | number;
-  position?: string;
+  position?: Position;
   top?: string;
   style?: object;
 }

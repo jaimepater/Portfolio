@@ -4,7 +4,7 @@ import { useSpring, animated as a, interpolate, config } from 'react-spring';
 import styled from 'styled-components';
 import ExperienceCard from './ExperienceCard';
 import getPosition from '../../../../Commons/Utils/getPosition';
-import { Experience } from '../../../../Definitions/definitions';
+import { Experience, FormattedDate } from '../../../../Definitions/definitions';
 
 interface ExperienceItemProps {
   item: Experience;
@@ -42,6 +42,7 @@ const ExperienceItem = ({ item }: ExperienceItemProps) => {
       return set({ top: positionTop, left: positionLeft });
     }
     return '';
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const positionY = top.interpolate(y => `${y}%`);
@@ -66,8 +67,8 @@ const ExperienceItem = ({ item }: ExperienceItemProps) => {
       <StyledGridDate item md={8}>
         <Hidden mdDown>
           <a.div style={{ position: 'absolute', top: positionY, left: positionX, transform }}>
-            <DateTo>{item.to.display}</DateTo>
-            <DateFrom>{item.from.display}</DateFrom>
+            <DateTo>{(item.to as FormattedDate).display}</DateTo>
+            <DateFrom>{(item.from as FormattedDate).display}</DateFrom>
           </a.div>
         </Hidden>
       </StyledGridDate>

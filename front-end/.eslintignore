@@ -1,0 +1,3 @@
+*.test.tsx
+___mocks__/**
+**/node-modules/**

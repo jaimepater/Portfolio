@@ -31,7 +31,6 @@ const BannerSkills = ({ text: fullText }: BannerSkillsProps) => {
 
   useEffect(() => {
     tick();
-    /* eslint-disable react-hooks/exhaustive-deps */
   }, [txt, txt !== fullText]);
 
   return (

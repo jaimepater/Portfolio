@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import ProjectList from './ProjectList';
 import BannerParellax from './BannerParellax';
 import useStores from '../../../Commons/Hooks/Stores';
+import getImage from '../../../Commons/Utils/getImage';
 
 const Projects = observer(() => {
   const {

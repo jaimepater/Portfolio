@@ -6,6 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import { Experience, FormattedDate } from '../../../../Definitions/definitions';
 import Ibm from '../../../../assets/Images/ibm.png';
 import Belatrix from '../../../../assets/Images/belatrix.png';
+import Intertec from '../../../../assets/Images/intertec.png';
 import Bulleted from '../../../../Components/Bulleted';
 import Technologies from '../../../../Components/Technologies';
 import { FORMAT_DATES } from '../../../../Commons/constants';
@@ -13,6 +14,7 @@ import { FORMAT_DATES } from '../../../../Commons/constants';
 const images = {
   Belatrix,
   IBM: Ibm,
+  Intertec,
 };
 
 const StyledCard = styled(Card)`

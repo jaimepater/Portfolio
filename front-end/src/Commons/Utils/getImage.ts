@@ -16,6 +16,8 @@ import sc from '../../assets/Images/logos/sc.png';
 import ts from '../../assets/Images/logos/ts.png';
 import python from '../../assets/Images/logos/python.png';
 import react360 from '../../assets/Images/logos/react360.png';
+import redux from '../../assets/Images/logos/redux.svg';
+import reactQuery from '../../assets/Images/logos/react-query.svg';
 
 const images: any = {
   angular,
@@ -36,6 +38,8 @@ const images: any = {
   python,
   react360,
   mobx,
+  redux,
+  reactQuery,
 };
 
 const getImage = (key: string) => images[key];

@@ -18,6 +18,10 @@ import python from '../../assets/Images/logos/python.png';
 import react360 from '../../assets/Images/logos/react360.png';
 import redux from '../../assets/Images/logos/redux.svg';
 import reactQuery from '../../assets/Images/logos/react-query.svg';
+import next from '../../assets/Images/logos/next.png';
+import nest from '../../assets/Images/logos/NestJS.png';
+import raspberry from '../../assets/Images/logos/raspberry.png';
+import supergradients from '../../assets/Images/logos/supergradients.png';
 
 const images: any = {
   angular,
@@ -40,6 +44,10 @@ const images: any = {
   mobx,
   redux,
   reactQuery,
+  next,
+  nest,
+  raspberry,
+  supergradients,
 };
 
 const getImage = (key: string) => images[key];

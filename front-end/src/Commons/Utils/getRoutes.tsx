@@ -1,14 +1,20 @@
 import { lazy } from 'react';
 
-const Home = lazy(() => import('../../Containers/Portfolio/Portfolio'));
+const HomePortfolio = lazy(() => import('../../Containers/Portfolio/Portfolio'));
 const ContactMe = lazy(() => import('../../Containers/ContactMe/ContactMe'));
-const routes = [
+const HomeSolutions = lazy(() => import('../../Containers/Solutions/Solutions'));
+
+export enum RoutesPageTypes {
+  PORTFOLIO = 'PORTFOLIO',
+  SOLUTIONS = 'SOLUTIONS',
+}
+const routesPortfolio = [
   {
     id: 'HOME',
     path: '/',
     name: 'Home',
     exact: true,
-    component: Home,
+    component: HomePortfolio,
   },
   {
     id: 'CONTACT_ME',
@@ -19,5 +25,21 @@ const routes = [
   },
 ];
 
-export const getRoutes = () => routes;
-export const gerRoute = (id: string) => routes.find(route => route.id === id);
+const routesSolutions = [
+  {
+    id: 'HOME',
+    path: '/',
+    name: 'Home',
+    exact: true,
+    component: HomeSolutions,
+  },
+];
+
+const routes = {
+  [RoutesPageTypes.PORTFOLIO]: routesPortfolio,
+  [RoutesPageTypes.SOLUTIONS]: routesSolutions,
+};
+
+export const getRoutes = (type: RoutesPageTypes) => routes[type];
+export const gerRoute = (type: RoutesPageTypes) => (id: string) =>
+  routes[type].find(route => route.id === id);

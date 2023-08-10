@@ -12,3 +12,9 @@ export const getMessagesRef = async () => {
   const databaseRef = firebase.database().ref();
   return databaseRef.child('messages');
 };
+
+export const getSolutionsRef = async () => {
+  await getFirebase();
+  const databaseRef = firebase.database().ref();
+  return databaseRef.child('solutions');
+};

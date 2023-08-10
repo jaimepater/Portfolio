@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Avatar from '../../../Components/Avatar';
+import Avatar from '../Avatar';
 
 const Container = styled.div`
   display: flex;
@@ -20,7 +20,7 @@ export const AvatarBorder = styled.div`
 
 const AvatarContainer = () => (
   <Container>
-    <AvatarBorder>
+    <AvatarBorder className="avatarContainer">
       <Avatar />
     </AvatarBorder>
   </Container>

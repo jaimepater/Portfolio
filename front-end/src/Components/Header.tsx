@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from './Logo';
-import { getRoutes } from '../Commons/Utils/getRoutes';
+import { getRoutes, RoutesPageTypes } from '../Commons/Utils/getRoutes';
 
 const StyledMenuList = styled(MenuList)`
   display: flex;
@@ -38,7 +38,7 @@ const Header = () => {
           <Logo />
         </StyledMenuIcon>
         <StyledMenuList>
-          {getRoutes().map(route => (
+          {getRoutes(RoutesPageTypes.PORTFOLIO).map(route => (
             <MenuItem
               component={Link}
               key={route.id}

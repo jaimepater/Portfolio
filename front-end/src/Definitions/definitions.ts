@@ -78,3 +78,23 @@ export interface SvgImageProps {
   top?: string;
   style?: object;
 }
+
+export interface Solution {
+  name: string;
+  shortDescription: string;
+  description: string;
+}
+
+export interface SolutionData {
+  profile?: {
+    name: string;
+    list: Array<string>;
+  };
+  services?: {
+    title: string;
+    list: Array<Solution>;
+  };
+  contact?: {
+    title: string;
+  };
+}

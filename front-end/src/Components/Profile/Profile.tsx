@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { ReactNode } from 'react';
 import { Container } from '@material-ui/core';
 import styled from 'styled-components';
 import AvatarContainer from './AvatarContainer';
@@ -8,11 +8,19 @@ const ProfileContainer = styled.div`
   padding-top: 5%;
 `;
 
-const Profile = () => (
+interface ProfileProps {
+  name: string;
+  showAvatar?: boolean;
+  flag?: ReactNode;
+  list: string[];
+  time?: number;
+}
+
+const Profile = (props: ProfileProps) => (
   <Container fixed>
     <ProfileContainer>
       <AvatarContainer />
-      <ProfileCard />
+      <ProfileCard {...props} />
     </ProfileContainer>
   </Container>
 );

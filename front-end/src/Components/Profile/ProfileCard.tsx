@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { Card, CardContent } from '@material-ui/core';
 import styled from 'styled-components';
-import { useEffect } from 'react';
 import { observer } from 'mobx-react';
+import { ReactNode } from 'react';
 import ProfileName from './ProfileName';
 import ProfileList from './ProfileList';
-import useStores from '../../../Commons/Hooks/Stores';
 
-const StyledCard = styled(Card)`
+export const StyledCard = styled(Card)`
   margin-top: -50px;
 `;
 
@@ -15,18 +14,20 @@ const StyledCardContent = styled(CardContent)`
   padding-top: 55px;
 `;
 
-const ProfileCard = observer(() => {
-  const { profileStore } = useStores();
-  useEffect(() => {
-    profileStore.getProfileData();
-  }, [profileStore]);
+interface ProfileCardProps {
+  name: string;
+  flag?: ReactNode;
+  list: string[];
+  time?: number;
+}
 
+const ProfileCard = observer(({ name, flag, list, time = 5000 }: ProfileCardProps) => {
   return (
     <StyledCard>
       <StyledCardContent>
         <div>
-          <ProfileName name={profileStore.fullName} />
-          <ProfileList profiles={profileStore.profiles || []} time={5000} />
+          <ProfileName name={name} flag={flag} />
+          <ProfileList profiles={list || []} time={time} />
         </div>
       </StyledCardContent>
     </StyledCard>

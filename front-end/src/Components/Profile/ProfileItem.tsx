@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled, { DefaultTheme, keyframes } from 'styled-components';
-import H2 from '../../../Components/H2';
+import H2 from '../H2';
 
 // Create the keyframes
 const animation = keyframes`

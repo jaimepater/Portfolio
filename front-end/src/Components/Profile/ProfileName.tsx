@@ -1,8 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { Grid } from '@material-ui/core';
-import H1 from '../../../Components/H1';
-import Colombia from '../../../Components/Colombia';
+import { ReactNode } from 'react';
+import Colombia from '../Colombia';
+import H1 from '../H1';
 
 export const Name = styled.div`
   font-family: 'Roboto';
@@ -22,15 +23,20 @@ const Flag = styled.div`
 
 interface ProfileNameProps {
   name: string;
+  flag?: ReactNode;
 }
 
-const ProfileName = ({ name }: ProfileNameProps) => (
+const ProfileName = ({ name, flag }: ProfileNameProps) => (
   <Grid container direction="row" justify="center" alignItems="center" spacing={1}>
-    <Grid item>
-      <Flag>
-        <Colombia />
-      </Flag>
-    </Grid>
+    {!flag ? (
+      <Grid item>
+        <Flag>
+          <Colombia />
+        </Flag>
+      </Grid>
+    ) : (
+      flag
+    )}
     <Grid item>
       <Name>
         <H1>{name}</H1>

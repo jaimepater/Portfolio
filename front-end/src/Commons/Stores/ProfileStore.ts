@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { action, computed, observable } from 'mobx';
 import moment from 'moment';
 import { getProfileRef } from '../Firebase/database';

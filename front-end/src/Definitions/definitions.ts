@@ -83,6 +83,7 @@ export interface Solution {
   name: string;
   shortDescription: string;
   description: string;
+  img: string;
 }
 
 export interface SolutionData {
@@ -97,4 +98,11 @@ export interface SolutionData {
   contact?: {
     title: string;
   };
+}
+
+export enum SolutionsImages {
+  AI = 'ai',
+  IOT = 'iot',
+  SOFTWARE = 'software',
+  TRAINING = 'training',
 }

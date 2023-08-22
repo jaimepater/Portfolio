@@ -35,7 +35,7 @@ const ContainerImage = styled.div`
 `;
 
 const ContainerSkill = styled(Paper)<{ delay: number }>`
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: transparent;
   padding: 7%;
   opacity: 0;
   animation: ${animation} 1s forwards;

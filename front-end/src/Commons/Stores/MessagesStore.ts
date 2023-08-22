@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { getMessagesRef } from '../Firebase/database';
 
 export interface MessageData {
@@ -11,6 +12,6 @@ export default class MessagesStore {
     const ref = await getMessagesRef();
     const newChildRef = ref.push();
     reset();
-    newChildRef.set(data);
+    newChildRef.set({ ...data, createdAt: moment().format('DD/MM/YYYY HH:mm') });
   };
 }

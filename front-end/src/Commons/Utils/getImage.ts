@@ -23,7 +23,7 @@ import nest from '../../assets/Images/logos/NestJS.png';
 import raspberry from '../../assets/Images/logos/raspberry.png';
 import supergradients from '../../assets/Images/logos/supergradients.png';
 
-const images: any = {
+const images = {
   angular,
   backbase,
   bluemix,

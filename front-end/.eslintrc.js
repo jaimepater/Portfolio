@@ -1,5 +1,12 @@
 module.exports = {
-  extends: ['plugin:@typescript-eslint/recommended', 'airbnb', "prettier",  "prettier/@typescript-eslint", "prettier/react", "react-app"],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'airbnb',
+    'prettier',
+    'prettier/@typescript-eslint',
+    'prettier/react',
+    'react-app',
+  ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'prettier'],
   settings: {
@@ -26,18 +33,18 @@ module.exports = {
       },
     ],
     'react/jsx-props-no-spreading': 'off',
-    "no-shadow": "off",
-    "@typescript-eslint/no-shadow": "warn",
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'warn',
     'react/require-default-props': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/ban-types': 'off',
-    "@typescript-eslint/no-unused-vars": [
-      "error",
+    '@typescript-eslint/no-unused-vars': [
+      'error',
       {
-        "argsIgnorePattern": "^_"
-      }
+        argsIgnorePattern: '^_',
+      },
     ],
-    "react/prop-types": "off",
+    'react/prop-types': 'off',
     'import/no-extraneous-dependencies': [2, { devDependencies: ['**/test.tsx', '**/test.ts'] }],
     'import/prefer-default-export': 'off',
     'import/no-cycle': [1, { maxDepth: 1 }],
@@ -56,8 +63,8 @@ module.exports = {
     ],
   },
   env: {
-    "browser": true,
-    "es6": true,
-    "node": true
+    browser: true,
+    es6: true,
+    node: true,
   },
-}
+};

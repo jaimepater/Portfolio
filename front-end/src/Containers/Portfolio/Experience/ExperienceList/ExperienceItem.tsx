@@ -65,12 +65,16 @@ const ExperienceItem = ({ item }: ExperienceItemProps) => {
   return (
     <Grid container spacing={3} direction="row" justify="space-between" ref={rootNode}>
       <StyledGridDate item md={8}>
-        <Hidden mdDown>
-          <a.div style={{ position: 'absolute', top: positionY, left: positionX, transform }}>
-            <DateTo>{(item.to as FormattedDate).display}</DateTo>
-            <DateFrom>{(item.from as FormattedDate).display}</DateFrom>
-          </a.div>
-        </Hidden>
+        {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          <Hidden mdDown>
+            <a.div style={{ position: 'absolute', top: positionY, left: positionX, transform }}>
+              <DateTo>{(item.to as FormattedDate).display}</DateTo>
+              <DateFrom>{(item.from as FormattedDate).display}</DateFrom>
+            </a.div>
+          </Hidden>
+        }
       </StyledGridDate>
       <StyledGridCard item xs={12} md={4}>
         <ExperienceCard item={item} />

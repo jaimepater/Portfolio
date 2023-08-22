@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { action, computed, observable } from 'mobx';
 import moment from 'moment';
 import { getSolutionsRef } from '../Firebase/database';
@@ -43,7 +44,6 @@ export default class SolutionStore {
   public async getProfileData() {
     const ref = await getSolutionsRef();
     return ref.on('value', snapshot => {
-      console.log('snapshot', snapshot.val());
       this.solutionData = snapshot.val();
     });
   }

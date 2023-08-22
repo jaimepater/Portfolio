@@ -10,13 +10,12 @@ const Services = observer(() => {
     solutionStore.getProfileData();
   }, [solutionStore]);
 
-  const { solutionTitle } = solutionStore;
-  console.log('solutionTitle', solutionTitle);
+  const { solutionTitle, solutionList } = solutionStore;
 
   return (
     <>
       {solutionTitle && <ServicesBanner title={solutionTitle} />}
-      <ServicesCards />
+      <ServicesCards solutionList={solutionList} />
     </>
   );
 });

@@ -10,6 +10,7 @@ import H2 from '../../../Components/H2';
 import Logo from '../../../Components/Logo';
 
 const StyledProfile = styled.div`
+  padding-top: 64px;
   & .avatarContainer {
     display: none;
   }

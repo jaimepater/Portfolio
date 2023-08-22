@@ -31,7 +31,7 @@ const ProjectItem = ({ description, details }: ProjectItemProps) => {
           height: '100%',
           width: '100%',
           zIndex: !flipped ? 10 : 1,
-          opacity: opacity.interpolate((o: any) => 1 - o),
+          opacity: opacity.interpolate(o => 1 - (o as number)),
           transform,
         }}
       >

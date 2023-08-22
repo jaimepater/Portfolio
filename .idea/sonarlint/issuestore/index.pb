@@ -41,8 +41,6 @@ r
 Bfront-end/src/Containers/Portfolio/Hobbies/HobbiesBanner/Cloud.tsx,1/c/1ce8ba15779cb2074d55f86b6b7a40de3aa84d40
 v
 Ffront-end/src/Containers/Portfolio/Hobbies/HobbiesBanner/CloudBlue.tsx,f/8/f87f14e35e98672f78fbcf4acbee9a3d69d3af23
->
-front-end/.env,5/c/5c7a65c355f945dc50c9a0f8f9ca4c117b1acf5b
 D
 front-end/.gitignore,3/4/34c80bf1a301addbc3aea01e969012e2053e52c0
 O
@@ -73,8 +71,6 @@ k
 ;front-end/src/Containers/Portfolio/Projects/ProjectItem.tsx,1/c/1c55730ecfcfd89367bc10a674721cf9ec95bf1d
 k
 ;front-end/src/Containers/Portfolio/Projects/ProjectList.tsx,5/f/5f89ab90bba58a6bf092e08a7cd0bde85b453765
-n
->front-end/src/Containers/Portfolio/Projects/ProjectSummary.tsx,e/7/e745ef63f9aafabeb3cb51c6525f49cd49f85d64
 a
 1front-end/src/assets/Images/logos/react-query.svg,7/0/70b1c9a8b4168d0b3d2b0c48f9701814c799ff36
 W

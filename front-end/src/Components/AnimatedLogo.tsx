@@ -29,12 +29,10 @@ const AnimatedLogo = ({ width = 60, height = 60 }: AnimatedLogoProps) => {
   });
 
   const StyledTextP = styled.text`
-    --webkit-transform: translate(${xp}px, ${y}px);
     transform: translate(${xp}px, ${y}px);
   `;
 
   const StyledTextJ = styled.text`
-    --webkit-transform: translate(${xj}px, ${y}px);
     transform: translate(${xj}px, ${y}px);
   `;
 

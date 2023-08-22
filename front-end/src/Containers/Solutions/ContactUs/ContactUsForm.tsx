@@ -144,7 +144,7 @@ const ContactUsForm = observer(() => {
               multiline
               fullWidth
               inputRef={register({ required: true })}
-              rows={4}
+              minRows={4}
             />
           </FormControl>
         </StyledFormContainer>

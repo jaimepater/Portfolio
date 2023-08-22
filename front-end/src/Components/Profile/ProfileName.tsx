@@ -27,7 +27,7 @@ interface ProfileNameProps {
 }
 
 const ProfileName = ({ name, flag }: ProfileNameProps) => (
-  <Grid container direction="row" justify="center" alignItems="center" spacing={1}>
+  <Grid container direction="row" justifyContent="center" alignItems="center" spacing={1}>
     {!flag ? (
       <Grid item>
         <Flag>

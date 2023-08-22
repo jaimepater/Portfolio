@@ -7,8 +7,6 @@ k
 ;front-end/src/Containers/Portfolio/Projects/ProjectItem.tsx,1/c/1c55730ecfcfd89367bc10a674721cf9ec95bf1d
 k
 ;front-end/src/Containers/Portfolio/Projects/ProjectList.tsx,5/f/5f89ab90bba58a6bf092e08a7cd0bde85b453765
-n
->front-end/src/Containers/Portfolio/Projects/ProjectSummary.tsx,e/7/e745ef63f9aafabeb3cb51c6525f49cd49f85d64
 a
 1front-end/src/assets/Images/logos/react-query.svg,7/0/70b1c9a8b4168d0b3d2b0c48f9701814c799ff36
 W

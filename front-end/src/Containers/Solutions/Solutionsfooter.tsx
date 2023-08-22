@@ -44,15 +44,14 @@ const FooterContainer = styled(motion.footer)`
 
 interface WaveProps {
   opacity?: number;
-  zIndex?: number;
+  $zIndex?: number;
   button?: string;
 }
 
 const Wave = styled(motion.div)<WaveProps>`
   position: absolute;
   opacity: ${props => props.opacity || 1};
-  z-index: ${props => props.zIndex || 1};
-  z-index: ${props => props.zIndex || 1};
+  z-index: ${props => props.$zIndex || 1};
   top: -100px;
   bottom: ${props => props.button && '0'}
   left: 0;
@@ -73,11 +72,11 @@ const FooterText = styled.div`
 const SolutionsFooter = () => {
   return (
     <FooterContainer>
-      <Wave {...waveAnimation} zIndex={2} />
-      <Wave {...waveAnimationReverse} zIndex={1} opacity={0.5} />
+      <Wave {...waveAnimation} $zIndex={2} />
+      <Wave {...waveAnimationReverse} $zIndex={1} opacity={0.5} />
       <Wave
         {...{ ...waveAnimation, transition: { ...waveAnimation.transition, duration: 3 } }}
-        zIndex={2}
+        $zIndex={2}
         opacity={0.2}
       />
       <Wave
@@ -85,7 +84,7 @@ const SolutionsFooter = () => {
           ...waveAnimationReverse,
           transition: { ...waveAnimationReverse.transition, duration: 3 },
         }}
-        zIndex={1}
+        $zIndex={1}
         opacity={0.7}
       />
       <FooterText>

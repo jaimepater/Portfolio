@@ -59,9 +59,6 @@ n
 >front-end/src/Containers/Portfolio/Projects/ProjectDetails.tsx,8/1/819402f7335556425c7b844952939127d93c0829
 Y
 )front-end/src/Components/Technologies.tsx,a/e/aeb3ab5c645f4f24f0908f6e45bf086b24c1b653
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 X
 (front-end/src/assets/Images/Colombia.svg,5/5/55f8c64f21d89801383f78ee23b30c7d919af26f
 T
